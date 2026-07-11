@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import eart from '../Assets/Images/earth2.png'
 import home1 from '../Assets/Images/home1.png'
 import home2 from '../Assets/Images/home2.png'
-import { AccountTreeOutlined, AnalyticsOutlined, ArrowForward, ArrowLeft, ArrowLeftOutlined, ArrowOutward, CheckCircleOutlined, DesignServicesOutlined, EastOutlined, HandshakeOutlined, PublicOutlined } from '@mui/icons-material'
+import { AccountTreeOutlined, AnalyticsOutlined, ArrowForward, ArrowLeft, ArrowLeftOutlined, ArrowOutward, CheckCircleOutlined, DesignServicesOutlined, EastOutlined, HandshakeOutlined, PublicOutlined, SouthOutlined } from '@mui/icons-material'
 import RandomDots from '../Component/RandomDots'
 
 function Home() {
@@ -26,7 +26,7 @@ function Home() {
       no: "02",
       title: "Business Analysis",
       desc: "Our experts analyze your business & market opportunities.",
-      icon: <AnalyticsOutlined className='text-white fs-48' />,
+      icon: <AnalyticsOutlined className='text-white fs-52' />,
     },
     {
       no: "03",
@@ -53,7 +53,7 @@ function Home() {
     <Box sx={{ mt: 5 }}>
       <Grid container>
         <Grid size={{ xs: 12, md: 5.5 }} sx={{ pb: { xs: 0, md: 10 }, pt: 5 }}>
-          <Typography className='text-main fw-medium fs-20' data-aos="fade-up"  gutterBottom sx={{ letterSpacing: "2px" }}>WELCOME TO NYMPTH INTERNATIONAL LLP</Typography>
+          <Typography className='text-main fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>WELCOME TO NYMPTH INTERNATIONAL LLP</Typography>
           <Typography variant='h2' className='fw-medium' data-aos="fade-up">Empowering Business</Typography>
           <Typography variant='h2' className='fw-medium mb-2' data-aos="fade-up"><span className='text-main'>Beyond</span> Borders</Typography>
           <Typography data-aos="fade-up">Global Cosulting, Stretegic Solutions & International <br /> Expansion For Sustainable Growth.</Typography>
@@ -106,16 +106,15 @@ function Home() {
       </Grid>
       <Grid container sx={{ position: 'relative', zIndex: 2 }}>
         <RandomDots />
-        <Grid size={12} className="border-blue bg-graidient border-10 p-4 ps-5">
+        <Grid size={12} className="border-blue bg-graidient border-10 p-3 p-md-4 ps-md-5">
           <Grid
             container
-
-            sx={{ alignItems: 'center', justifyContent: 'end' }}
-            wrap="nowrap"
+            sx={{ alignItems: 'center', gap:{xs:3,md:0}, justifyContent: {xs:"space-between", md:'end'} }}
+            // wrap="nowrap"
           >
             {stats.map((item, index) => (
               <React.Fragment key={index}>
-                <Grid size={{ xs: "grow" }}>
+                <Grid size={{xs:12, md:"grow"}}>
                   <Box className="d-flex align-items-center gap-3">
                     <Box
                       sx={{ height: 50, width: 50 }}
@@ -129,7 +128,7 @@ function Home() {
                 </Grid>
 
                 {index !== stats.length - 1 && (
-                  <Grid size="auto">
+                  <Grid size="auto" className='d-none d-md-inline-block'>
                     <Box
                       sx={{
                         width: "1px",
@@ -348,8 +347,19 @@ function Home() {
                   </Box>
                 </Grid>
                 {index < (workSteps.length - 1) && (
-                  <Grid size='auto' data-aos="fade-right" className='mt-4'>
-                    <Typography className='text-white'><EastOutlined className='fs-64 text-main' /> </Typography>
+                  <Grid size='auto' data-aos="fade-right" className='mt-3 mb-4 mb-md-0 mx-auto'>
+                    <Typography className='text-white my-2 my-md-0'>   <SouthOutlined
+                      className="fs-64 text-main"
+                      sx={{ display: { xs: "block", md: "none" } }}
+                    />
+
+                      {/* Tablet/Desktop */}
+                      <EastOutlined
+                        className="fs-64 text-main"
+                        sx={{ display: { xs: "none", md: "block" } }}
+                      />
+                    </Typography>
+
                   </Grid>
                 )}
               </>
@@ -385,9 +395,9 @@ function Home() {
           }}
         >
           <Grid container sx={{
+            gap: 2,
             justifyContent: 'space-between', alignItems: 'center'
           }}
-
           >
             <Grid size={'auto'} data-aos="fade-up">
               <Typography className='fs-20 fw-medium'>Ready to Take Your Business Global?</Typography>

@@ -60,7 +60,7 @@ function Header() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            background:'transparent',
+            background:'transparent !important',
             // background: darkTheme ? "black" : "white",
             px: 1,
 
@@ -116,7 +116,7 @@ function Header() {
 
             <Box sx={{ ml: "auto", display: { xs: "block", md: "none" } }}>
               <IconButton onClick={() => setOpen(true)}>
-                <MenuIcon />
+                <MenuIcon className="text-white" />
               </IconButton>
             </Box>
           </Toolbar>
@@ -127,27 +127,29 @@ function Header() {
         anchor="right"
         open={open}
         onClose={() => setOpen(false)}
+
       >
-        <Box sx={{ width: 280, mt: 2 }}>
-          <List>
+        <Box sx={{ width: 280}} className='bg-main d-flex flex-column p-2 h-100' >
+          <List sx={{flex:1}}>
             {menuItems.map((item) => (
               <ListItemButton
                 key={item}
                 onClick={() => setOpen(false)}
+                sx={{borderBottom:"1px solid #FFFFFF1A"}}
               >
                 <ListItemText primary={item} />
               </ListItemButton>
             ))}
 
             {/* <Box sx={{ p: 2 }}> */}
+            {/* </Box> */}
+          </List>
             <Button
               fullWidth
               variant="contained"
               className="btn-main">
               Get Started
             </Button>
-            {/* </Box> */}
-          </List>
         </Box>
       </Drawer>
     </>
