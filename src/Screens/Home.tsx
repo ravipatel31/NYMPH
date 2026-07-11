@@ -54,16 +54,16 @@ function Home() {
       <Grid container>
         <Grid size={{ xs: 12, md: 5.5 }} sx={{ pb: { xs: 0, md: 10 }, pt: 5 }}>
           <Typography className='text-main fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>WELCOME TO NYMPTH INTERNATIONAL LLP</Typography>
-          <Typography variant='h2' className='fw-medium' data-aos="fade-up">Empowering Business</Typography>
-          <Typography variant='h2' className='fw-medium mb-2' data-aos="fade-up"><span className='text-main'>Beyond</span> Borders</Typography>
+          <Typography  className='fw-medium fs-64' sx={{whiteSpace:{xs:"normal",md:"nowrap"}}} data-aos="fade-up">Empowering Business</Typography>
+          <Typography  className='fw-medium mb-2 fs-64' data-aos="fade-up"><span className='text-main'>Beyond</span> Borders</Typography>
           <Typography data-aos="fade-up">Global Cosulting, Stretegic Solutions & International <br /> Expansion For Sustainable Growth.</Typography>
-          <List className='d-flex text-white p-0 m-0 mt-3' data-aos="fade-up">
+          <List className='d-flex flex-column flex-md-row gap-3 gap-md-0 text-white p-0 m-0 mt-3' data-aos="fade-up">
             <ListItem className='gap-2 m-0 p-0'><CheckCircleOutlined className='text-main' /> Stretegy</ListItem>
             <ListItem className='gap-2 p-0'><CheckCircleOutlined className='text-main' /> Execusion</ListItem>
             <ListItem className='gap-2 p-0'><CheckCircleOutlined className='text-main' /> Growth</ListItem>
             <ListItem className='gap-2 p-0'><CheckCircleOutlined className='text-main' /> Global Presence</ListItem>
           </List>
-          <Box className='d-flex gap-3'>
+          <Box className='d-flex flex-column flex-md-row gap-1 gap-md-3'>
             <Button className='btn-main text-white px-4 py-2 mt-4' data-aos="fade-up">
               Book Free Consultation
             </Button>
@@ -394,16 +394,16 @@ function Home() {
 
           }}
         >
-          <Grid container sx={{
+          <Grid container data-aos="fade-up" sx={{
             gap: 2,
             justifyContent: 'space-between', alignItems: 'center'
           }}
           >
-            <Grid size={'auto'} data-aos="fade-up">
+            <Grid size={'auto'}>
               <Typography className='fs-20 fw-medium'>Ready to Take Your Business Global?</Typography>
               <Typography className='fs-14'>Let's uild your success story together.</Typography>
             </Grid>
-            <Grid size={"auto"} data-aos="fade-up">
+            <Grid size={"auto"}>
               <Button className='btn-main px-3 text-white py-2'>Book a free Cosultation <ArrowForward /></Button>
             </Grid>
           </Grid>

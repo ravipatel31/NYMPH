@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import Header from './Header'
+import Footer from './Footer'
 
 function Layout({children}:{ children: React.ReactNode }) {
     return (
@@ -9,6 +10,7 @@ function Layout({children}:{ children: React.ReactNode }) {
             <Box sx={{ flex:1, py:{ xs: 1, md: "50px", lg: '70px' }, px:{ xs: 1, lg: 4 }}} className='w-100 m-0' >
                 {children}
             </Box>
+            <Footer/>
         </Box>
     )
 }
