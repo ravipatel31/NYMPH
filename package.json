@@ -2,6 +2,7 @@
   "name": "nymph",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ravipatel31.github.io/NYMPH",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
