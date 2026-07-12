@@ -60,7 +60,7 @@ function Footer() {
                     <Typography className='fs-18 fw-medium mb-3'>Contact Us</Typography>
                     <Box className='d-flex align-items-start gap-2 mb-3'>
                         <LocationPin className='text-white' />
-                        <Typography className='fs-14'>G-204 White Elegance, Naroda-Dehgam Road, Naroda, Ahmedabad-3823230</Typography>
+                        <Typography className='fs-14'>AF-6, Takshashila Orient, Nikol-Naroda Road, Ahmedabad, Gujarat, India - 382350.</Typography>
                     </Box>
                     <Box className='d-flex align-items-start gap-2 mb-3'>
                         <Call className='text-white' />

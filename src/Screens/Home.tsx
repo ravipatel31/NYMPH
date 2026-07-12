@@ -70,7 +70,7 @@ function Home() {
             <Button variant='outlined' className='btn-outlined-main text-main px-4 py-2 mt-4' data-aos="fade-up">
               Explore Videos
             </Button>
-          </Box>s
+          </Box>
         </Grid>
         <Grid className='d-none d-md-inline-block' data-aos="zoom-in" size={{ xs: 0, md: 6.5 }}
           // sx={{background:`url(${eart2})`, backgroundSize:'100%', backgroundPosition:'top center'}}
@@ -366,20 +366,20 @@ function Home() {
             ))}
           </Grid>
         </Grid>
-        <Grid size={12} data-aos="zoom-in" className='mt-5 p-3 px-5 border-blue  border-10'
-          sx={{
-            position: "relative",
-            background: `url(${eart})`,
-            backgroundSize: "700px 500px",
-            backgroundPosition: "top right",
-            backgroundPositionY: '-100px',
-            backgroundRepeat: "no-repeat",
-            overflow: "hidden",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              inset: 0,
-              background: `
+        <Grid size={12} data-aos="zoom-in" className='mt-5 p-3 px-md-5 border-blue  border-10'
+                sx={{
+                    position: "relative",
+                    background: `url(${eart})`,
+                    backgroundSize: "700px 500px",
+                    backgroundPosition: "top right",
+                    backgroundPositionY: '-100px',
+                    backgroundRepeat: "no-repeat",
+                    overflow: "hidden",
+                    "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        inset: 0,
+                        background: `
         linear-gradient(
           to left,
           var(--secondary-dark-color) 0%,
@@ -389,25 +389,25 @@ function Home() {
           transparent 65%
         )
       `,
-              pointerEvents: "none",
-            },
+                        pointerEvents: "none",
+                    },
 
-          }}
-        >
-          <Grid container data-aos="fade-up" sx={{
-            gap: 2,
-            justifyContent: 'space-between', alignItems: 'center'
-          }}
-          >
-            <Grid size={'auto'}>
-              <Typography className='fs-20 fw-medium'>Ready to Take Your Business Global?</Typography>
-              <Typography className='fs-14'>Let's uild your success story together.</Typography>
+                }}
+            >
+                <Grid container data-aos="fade-up" sx={{
+                    gap: 2,
+                    justifyContent: 'space-between', alignItems: 'center'
+                }}
+                >
+                    <Grid size={{xs:12,md:'auto'}}>
+                        <Typography className='fs-20 fw-medium'>Ready to Take Your Business Global?</Typography>
+                        <Typography className='fs-14'>Let's uild your success story together.</Typography>
+                    </Grid>
+                    <Grid size={"auto"}>
+                        <Button className='btn-main px-3 text-white py-2'>Book a free Cosultation <ArrowForward /></Button>
+                    </Grid>
+                </Grid>
             </Grid>
-            <Grid size={"auto"}>
-              <Button className='btn-main px-3 text-white py-2'>Book a free Cosultation <ArrowForward /></Button>
-            </Grid>
-          </Grid>
-        </Grid>
       </Grid>
     </Box>
   )

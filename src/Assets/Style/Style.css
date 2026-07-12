@@ -2,6 +2,7 @@
 
 :root {
     --primary-color: rgb(194, 139, 57);
+    --primary--light-color: rgba(194, 139, 57,.1);
     /* --primary-dark-color : #6C40B8; */
     /* --primary-light-color : #4B2393; */
     /* --secondary-dark-color:rgb(7, 11, 28); */
@@ -107,6 +108,13 @@
             rgba(255, 255, 255, 0.2),
             transparent) 1;
 }
+.border-bottom-gradient-main{
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(90deg,
+            var(--primary--light-color),
+            var(--primary-color),
+            var(--primary--light-color)) 1;
+}
 
 .border-main-bottom {
     border-bottom: 1px solid transparent;
@@ -123,7 +131,7 @@
 .glow-card:hover {
     border: 1px solid var(--primary-color);
     box-shadow: 0px 0px 20px var(--primary-color);
-    transform: translateY(-10px);
+    transform: translateY(-10px) !important;
     transition: all .3s;
 }
 
@@ -155,4 +163,7 @@
 
 .bg-graidient {
     background: linear-gradient(90deg, var(--third-color), var(--secondary-color)) !important;
+}
+.whitespace{
+    white-space: nowrap;
 }
