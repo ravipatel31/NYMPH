@@ -9,15 +9,12 @@ import "aos/dist/aos.css";
 
 function App() {
   useEffect(() => {
-    const isDesktop = window.innerWidth >= 768; 
-    if (isDesktop) {
       AOS.init({
         duration: 1000,
         easing: "ease-in-out",
         once: true,
         offset: 100,
       });
-    }
   }, []);
   return (
     <Box className='App'>
