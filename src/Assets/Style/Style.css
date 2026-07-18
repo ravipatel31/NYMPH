@@ -3,7 +3,7 @@
 :root {
     --primary-color: rgb(194, 139, 57);
     --primary--light-color: rgba(194, 139, 57,.1);
-    /* --primary-dark-color : #6C40B8; */
+    /* --primary-color : #6C40B8;  */
     /* --primary-light-color : #4B2393; */
     /* --secondary-dark-color:rgb(7, 11, 28); */
     /* --secondary-color:rgb(14, 14, 36); */
@@ -21,7 +21,7 @@
 }
 
 .MuiTypography-root {
-    color: white;
+    color: #ededed;
     font-family: "Google Sans", sans-serif !important;
 }
 
@@ -167,3 +167,38 @@
 .whitespace{
     white-space: nowrap;
 }
+a{
+    text-decoration: none !important;
+}
+.border-50{
+    border-radius: 50px;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-color) !important;
+
+}
+.MuiOutlinedInput-root.Mui-focused .MuiInputAdornment-root {
+  color: var(--primary-color) !important;
+
+}
+.MuiOutlinedInput-root.Mui-focused{
+    color: #FFFFFF;
+}
+.MuiInputBase-input::placeholder{
+    color: #FFFFFF !important;
+}
+.MuiInputAdornment-root{
+    color: #FFFFFF5A !important;
+}
+.MuiOutlinedInput-notchedOutline{
+    border-radius: 8px !important;
+    border-color: #FFFFFF5A !important;
+}
+ .MuiOutlinedInput-input{
+    padding: 12px;
+}
+
+/* .text-field .MuiOutlinedInput-input{
+ padding: 10px;
+} */

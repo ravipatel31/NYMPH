@@ -1,6 +1,7 @@
 import { Call, Email, Facebook, Instagram, LinkedIn, LocationCityOutlined, LocationPin, Twitter, X } from '@mui/icons-material'
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
+import fulllogo from '../Assets/Images/full-logo2.png'
 
 function Footer() {
     const menuItems = [
@@ -23,7 +24,7 @@ function Footer() {
         <Box className='border-main-top' sx={{px:{ xs: 1, lg: 4 },py:{ xs: 1, md: 3}, }}>
             <Grid container sx={{ gap:3, alignItems: 'stretch' }}>
                 <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-                    <Box sx={{ height: '50px', width: "100px" }} className='border-main mb-3 border-10'></Box>
+                    <Box sx={{ height: '60px'}} component={'img'} src={fulllogo} className='mb-3'></Box>
                     <Typography className='fs-14 mb-3'>NYMPH International LLP is a global consulting <br /> firm specializing in business managemnet,  <br /> stretegoc growth and international expansion.</Typography>
                     <Box className='d-flex align-items-center gap-3'>
                         <Box className='p-2 border-50 border' sx={{ borderRadius: '50%' }}>
@@ -64,11 +65,11 @@ function Footer() {
                     </Box>
                     <Box className='d-flex align-items-start gap-2 mb-3'>
                         <Call className='text-white' />
-                        <Typography className='fs-14'>+91 7984394970</Typography>
+                        <Typography className='fs-14'> <a href="tel:+919023623761" className='text-white' style={{textDecoration:'none !important', color:"white"}}>+91 9023623761</a></Typography>
                     </Box>
                     <Box className='d-flex align-items-start gap-2'>
                         <Email className='text-white' />
-                        <Typography className='fs-14'>ravikpatel2202@gmail.com</Typography>
+                        <Typography className='fs-14'><a href="mailto:nymph.iinternational@gmail.com" className='text-white'>nymph.iinternational@gmail.com</a></Typography>
                     </Box>
                 </Grid>
                 <Grid size={12} sx={{ border: "1px solid #FFFFFF1A" }}></Grid>

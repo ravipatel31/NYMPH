@@ -52,10 +52,12 @@ function Home() {
   return (
     <Box sx={{ mt: 5 }}>
       <Grid container>
-        <Grid size={{ xs: 12, md: 5.5 }} sx={{ pb: { xs: 0, md: 10 }, pt: 5 }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ pb: { xs: 0, md: 10 }, pt: 5 }}>
           <Typography className='text-main fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>WELCOME TO NYMPTH INTERNATIONAL LLP</Typography>
-          <Typography  className='fw-medium fs-64' sx={{whiteSpace:{xs:"normal",md:"nowrap"}}} data-aos="fade-up">Empowering Business</Typography>
-          <Typography  className='fw-medium mb-2 fs-64' data-aos="fade-up"><span className='text-main'>Beyond</span> Borders</Typography>
+          {/* <Typography  className='fw-medium fs-64' sx={{whiteSpace:{xs:"normal",md:"nowrap"}}} data-aos="fade-up">Empowering Business</Typography>
+          <Typography  className='fw-medium mb-2 fs-64' data-aos="fade-up"><span className='text-main'>Beyond</span> Borders</Typography> */}
+          <Typography  className='fw-medium fs-64' sx={{whiteSpace:{xs:"normal",md:"nowrap"}}} data-aos="fade-up">Where <span className='text-main'>Learning</span> Meets </Typography>
+          <Typography  className='fw-medium mb-2 fs-64' data-aos="fade-up">Global <span className='text-main'>Growth</span></Typography>
           <Typography data-aos="fade-up">Global Cosulting, Stretegic Solutions & International <br /> Expansion For Sustainable Growth.</Typography>
           <List className='d-flex flex-column flex-md-row gap-3 gap-md-0 text-white p-0 m-0 mt-3' data-aos="fade-up">
             <ListItem className='gap-2 m-0 p-0'><CheckCircleOutlined className='text-main' /> Stretegy</ListItem>
@@ -72,7 +74,7 @@ function Home() {
             </Button>
           </Box>
         </Grid>
-        <Grid className='d-none d-md-inline-block' data-aos="zoom-in" size={{ xs: 0, md: 6.5 }}
+        <Grid className='d-none d-md-inline-block' data-aos="zoom-in" size={{ xs: 0, md: 6}}
           // sx={{background:`url(${eart2})`, backgroundSize:'100%', backgroundPosition:'top center'}}
           sx={{
             position: "relative",

@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useLocation, useNavigate } from "react-router-dom";
+import logo from '../Assets/Images/full-logo2.png'
 
 const menuItems = [
   {
@@ -101,7 +102,12 @@ function Header() {
       >
         <Container maxWidth='xl'>
           <Toolbar disableGutters sx={{ height: 70 }}>
-            <Typography
+            <Box className='p-1 h-100'>
+            <Box component={'img'} src={logo} height={'100%'} onClick={() => {
+                      navigate(`/`);
+                    }}></Box>
+                    </Box>
+            {/* <Typography
               className="fw-bold"
               variant="h6"
               onClick={() => {
@@ -109,7 +115,7 @@ function Header() {
                     }}
             >
               NYMPH
-            </Typography>
+            </Typography> */}
 
             {/* Desktop Menu */}
             <Box
