@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/NYMPH/static/css/main.2ad10139.css",
-    "main.js": "/NYMPH/static/js/main.f55b643c.js",
+    "main.css": "/NYMPH/static/css/main.e22f980f.css",
+    "main.js": "/NYMPH/static/js/main.bcbc0cfc.js",
     "static/js/453.05dbc509.chunk.js": "/NYMPH/static/js/453.05dbc509.chunk.js",
     "static/media/home1.png": "/NYMPH/static/media/home1.2cb6f7ef665fa0ec1525.png",
+    "static/media/contact2.png": "/NYMPH/static/media/contact2.ef5aeb5b5e9c5bc09916.png",
     "static/media/about1.png": "/NYMPH/static/media/about1.4996aab94045b1981348.png",
     "static/media/earth2.png": "/NYMPH/static/media/earth2.4c37376971bde1c7c5dd.png",
+    "static/media/contact1.png": "/NYMPH/static/media/contact1.209b02bc8cea1a63e090.png",
     "static/media/home2.png": "/NYMPH/static/media/home2.4eef99d9c3fd47741071.png",
+    "static/media/full-logo2.png": "/NYMPH/static/media/full-logo2.8d77f1dcbe1c0a2a8fb6.png",
     "index.html": "/NYMPH/index.html",
-    "main.2ad10139.css.map": "/NYMPH/static/css/main.2ad10139.css.map",
-    "main.f55b643c.js.map": "/NYMPH/static/js/main.f55b643c.js.map",
+    "main.e22f980f.css.map": "/NYMPH/static/css/main.e22f980f.css.map",
+    "main.bcbc0cfc.js.map": "/NYMPH/static/js/main.bcbc0cfc.js.map",
     "453.05dbc509.chunk.js.map": "/NYMPH/static/js/453.05dbc509.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ad10139.css",
-    "static/js/main.f55b643c.js"
+    "static/css/main.e22f980f.css",
+    "static/js/main.bcbc0cfc.js"
   ]
 }
