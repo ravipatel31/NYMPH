@@ -1,0 +1,408 @@
+import { Box, Button, Divider, Grid, List, ListItem, Typography } from '@mui/material'
+import React from 'react'
+import about1 from '../Assets/Images/About/about1.png'
+import { Award, BadgeCheck, Brain, BriefcaseBusiness, ChartColumnIncreasing, ChartPie, ChessKnight, Cog, Cpu, EyeDashed, Globe,  ShieldCheck, Target, Users } from "lucide-react";
+import { ArrowForward, CheckCircleOutlined } from '@mui/icons-material';
+import eart from '../Assets/Images/earth2.png'
+
+
+function AboutUs2() {
+    const journeyTimeline = [
+        {
+            year: "2010",
+            title: "The Beginning",
+            description:
+                "Our journey started with a simple mission – to help businesses grow beyond boundaries.",
+        },
+        {
+            year: "2015",
+            title: "Expanding Horizons",
+            description:
+                "Expanded our services and reached clients across multiple countries.",
+        },
+        {
+            year: "2020",
+            title: "Global Impact",
+            description:
+                "Strengthened our global presence and empowered 500+ businesses worldwide.",
+        },
+        {
+            year: "Today",
+            title: "Building the Future",
+            description:
+                "Continuing to innovate, collaborate and create long-term value for our clients.",
+        },
+    ];
+
+    const services = [
+        {
+            title: "Business Strategy",
+            description:
+                "Crafting strategies that drive growth, efficiency and long-term success.",
+            icon: ChessKnight,
+        },
+        {
+            title: "Market Expansion",
+            description:
+                "Helping businesses enter new markets and scale globally with confidence.",
+            icon: Globe,
+        },
+        {
+            title: "Operational Excellence",
+            description:
+                "Optimizing processes to improve productivity and maximize performance.",
+            icon: Cog,
+        },
+        {
+            title: "Financial Advisory",
+            description:
+                "Providing financial insights and solutions for sustainable business growth.",
+            icon: ChartColumnIncreasing,
+        },
+        {
+            title: "Compliance & Legal",
+            description:
+                "Ensuring regulatory compliance and sound legal practices.",
+            icon: ShieldCheck,
+        },
+        {
+            title: "Technology Enablement",
+            description:
+                "Leveraging technology and innovation to accelerate business transformation.",
+            icon: Cpu,
+        },
+    ];
+
+    const leadershipData = [
+        {
+            name: "Arjun Mehta",
+            designation: "CEO & Co-Founder",
+            description:
+                "20+ years in strategic consulting and global business development.",
+            image: "/images/team/team-1.jpg",
+        },
+        {
+            name: "Priya Sharma",
+            designation: "Managing Partner",
+            description:
+                "Expert in market expansion and operational transformation.",
+            image: "/images/team/team-2.jpg",
+        },
+        {
+            name: "Rahul Verma",
+            designation: "Director – Strategy",
+            description:
+                "Specializes in business strategy, analytics and performance improvement.",
+            image: "/images/team/team-3.jpg",
+        },
+    ];
+    return (
+        <Box>
+            <Grid container sx={{height: {xs:"fit-content",md:'calc(100vh - 80px)'}}} className='position-relative g-bg pb-3 pb-md-0'>
+                <Grid size={{ xs: 12, md: 5.5 }} className='my-0 my-md-auto' sx={{ px: { xs: 2, md: 3 }, pt: 5, zIndex: 2 }}>
+                    <Typography className='text-second fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>ABOUT US</Typography>
+                    <Typography className='fw-medium fs-52 c-f mt-2' sx={{ whiteSpace: { xs: "normal", md: "nowrap" } }} data-aos="fade-up">Commited to Your Growth</Typography>
+                    <Typography className='fw-medium mb-3 fs-52 c-f' data-aos="fade-up" sx={{ whiteSpace: { xs: "auto", md: 'nowrap' } }} > Driven by <i className='text-main'>Purpose.</i></Typography>
+                    <Typography data-aos="fade-up">NYMPTH International LLP is a global consulting firm <br /> dedicated to helping businesses evolve, expand <br /> and enhance in ever changing world.</Typography>
+                    <Box className='mt-3' sx={{ border: '2px solid var(--primary-color)', width: '75px' }}></Box>
+                </Grid>
+                <Grid size={{ xs: 12, md: 6.5 }} className='d-none d-md-inline-block right-side' data-aos="zoom-in">
+                    <Box className='hero-section h-100 w-100'></Box>
+                </Grid>
+            </Grid>
+            <Grid container spacing={2} className='mt-3 mx-2 mx-md-4 justify-content-between border-10 bg-white' sx={{ boxShadow: '0px 0px 3px #ccc' }} >
+                <Grid className='border-10 p-4 px-5' data-aos="fade-up" size={{ xs: 12, md: 6, lg: 'grow' }}>
+                    <Box className='d-flex justify-cotent-center'>
+                        <Target style={{ height: '70px', width: "70px", borderRadius: '50%' }} className='text-main border-main p-2 mb-3 mx-auto' />
+                    </Box>
+                    <Typography className='fw-medium text-center fs-20 c-f' gutterBottom>Our Mission</Typography>
+                    <Typography className='fs-16 text-center'>Empowering business with supportive stretegies and global opportunities.</Typography>
+                </Grid>
+                <Grid size={{ xs: 'auto' }} className='d-none d-md-inline-block border my-5'>
+                </Grid>
+                <Grid className='border-10 p-4 px-5' data-aos="fade-up" size={{ xs: 12, md: 6, lg: 'grow' }}>
+                    <Box className='d-flex justify-cotent-center'>
+                        <EyeDashed style={{ height: '70px', width: "70px", borderRadius: '50%' }} className='text-main border-main p-2 mb-3 mx-auto' />
+                    </Box>
+                    <Typography className='fw-medium text-center fs-20 c-f' gutterBottom>Our Vision</Typography>
+                    <Typography className='fs-16 text-center'>To be a global invest in consulting  and business expansion services.</Typography>
+                </Grid>
+                <Grid size={{ xs: 'auto' }} className='d-none d-md-inline-block border my-5'>
+                </Grid>
+                <Grid className='border-10 p-4 px-5' data-aos="fade-up" size={{ xs: 12, md: 6, lg: 'grow' }}>
+                    <Box className='d-flex justify-cotent-center'>
+                        <BadgeCheck style={{ height: '70px', width: "70px", borderRadius: '50%' }} className='text-main border-main p-2 mb-3 mx-auto' />
+                    </Box>
+                    <Typography className='fw-medium text-center fs-20 c-f' gutterBottom>Our Values</Typography>
+                    <Typography className='fs-16 text-center'>In depth Business proposal overlution and actionable strategy planing for sustainable growth</Typography>
+                </Grid>
+                <Grid size={{ xs: 'auto' }} className='d-none d-md-inline-block border my-5'>
+                </Grid>
+                <Grid className='border-10 p-4 px-5' data-aos="fade-up" size={{ xs: 12, md: 6, lg: 'grow' }}>
+                    <Box className='d-flex justify-cotent-center'>
+                        <Brain style={{ height: '70px', width: "70px", borderRadius: '50%' }} className='text-main border-main p-2 mb-3 mx-auto' />
+                    </Box>
+                    <Typography className='fw-medium text-center fs-20 c-f' gutterBottom>Our Approch</Typography>
+                    <Typography className='fs-16 text-center'>Seamless Incorportion  & Setup of business, branches & subboundries across the globe</Typography>
+                </Grid>
+            </Grid>
+            <Grid container sx={{ gap: { xs: 5, md: 0 } }} className='mt-5 justify-content-between mx-2 mx-md-4'>
+                <Grid size={{ xs: 12, md: 6 }}>
+                    <Typography className='fw-medium text-main fs-24 mb-2' data-aos="fade-up">Our Journey</Typography>
+                    <Typography className='fs-16' data-aos="fade-up">Founded with a vision to bridge business with global opportunities. NYMPTH Intenational LLP has grown into a trusted partner for startups, SMEs and Corporate clients worldwide.</Typography>
+                    <Grid container className='mt-4'>
+                        <Grid data-aos="zoom-in" size={{ xs: 6, sm: 6, md: 4 }}>
+                            <Box className='d-flex h-100 align-items-center gap-3 border justify-content-center p-3'>
+                                <BriefcaseBusiness style={{ height: '50px', width: 'auto' }} className='text-main' />
+                                <Box>
+                                    <Typography className='fw-medium fs-28'>15+</Typography>
+                                    <Typography className='fs-14'>Years of Experience</Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+                        <Grid data-aos="zoom-in" size={{ xs: 6, sm: 6, md: 4 }}>
+                            <Box className='d-flex h-100 align-items-center gap-3 border justify-content-center p-3'>
+                                <Users style={{ height: '50px', width: 'auto' }} className='text-main' />
+                                <Box>
+                                    <Typography className='fw-medium fs-28'>500+</Typography>
+                                    <Typography className='fs-14'>Business Empowered</Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+                        <Grid data-aos="zoom-in" size={{ xs: 6, sm: 6, md: 4 }}>
+                            <Box className='d-flex h-100 align-items-center gap-3 border justify-content-center p-3'>
+                                <Globe style={{ height: '50px', width: 'auto' }} className='text-main' />
+                                <Box>
+                                    <Typography className='fw-medium fs-28'>25+</Typography>
+                                    <Typography className='fs-14'>Countries Served</Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+                        <Grid data-aos="zoom-in" size={{ xs: 6, sm: 6, md: 4 }}>
+                            <Box className='d-flex h-100 align-items-center gap-3 border justify-content-center p-3'>
+                                <ChartPie style={{ height: '50px', width: 'auto' }} className='text-main' />
+                                <Box>
+                                    <Typography className='fw-medium fs-28'>98%</Typography>
+                                    <Typography className='fs-14'>Client Retentions</Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+                        <Grid data-aos="zoom-in" size={{ xs: 6, sm: 6, md: 4 }}>
+                            <Box className='d-flex align-items-center gap-3 border justify-content-center p-3'>
+                                <Users style={{ height: '50px', width: 'auto' }} className='text-main' />
+                                <Box>
+                                    <Typography className='fw-medium fs-28'>300+</Typography>
+                                    <Typography className='fs-14'>Experts and professionals</Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+                        <Grid data-aos="zoom-in" size={{ xs:6, sm: 6, md: 4 }}>
+                            <Box className='d-flex h-100 align-items-center gap-3 border justify-content-center p-3'>
+                                <Award style={{ height: '50px', width: 'auto' }} className='text-main' />
+                                <Box>
+                                    <Typography className='fw-medium fs-28'>20+</Typography>
+                                    <Typography className='fs-14'>Industries Covered</Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid size={{ xs: 12, md: 5 }}>
+                    <Box className='position-relative' data-aos="fade-down">
+                        {/* Vertical Line */}
+                        <Box
+                            className='position-absolute bg-main'
+                            sx={{
+                                position: "absolute",
+                                left: 3,
+                                top: 12,
+                                bottom: 20,
+                                width: "2px",
+                                background: "var(--primary-color)",
+                            }}
+                        />
+
+                        {journeyTimeline.map((item, index) => (
+                            <Box
+                                className='d-flex gap-4 mb-5 align-items-start'
+                                data-aos="fade-down"
+                                sx={{ position: 'relative' }}
+                                key={index}>
+                                <Box
+                                    sx={{
+                                        position: "absolute",
+                                        left: -5,
+                                        top: 12,
+                                        width: 18,
+                                        height: 18,
+                                        borderRadius: "50%",
+                                        bgcolor: "var(--primary-color)",
+                                        border: "3px solid var(--secondary-dark-color)",
+                                        zIndex: 2,
+                                    }}
+                                />
+
+                                <Box
+                                    className="bg-purple"
+                                    sx={{
+                                        // minWidth: 90,
+                                        textAlign: "center",
+                                        py: 1,
+                                        px: 2,
+                                        borderRadius: "12px",
+                                        ml: 3,
+                                    }}
+                                >
+                                    <Typography
+                                        className="fw-medium text-white fs-16 text-center">
+                                        {item.year}
+                                    </Typography>
+                                </Box>
+
+                                {/* Content */}
+                                <Box>
+                                    <Typography className="fw-medium fs-20 mb-1">
+                                        {item.title}
+                                    </Typography>
+
+                                    <Typography className="fs-14" >
+                                        {item.description}
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        ))}
+                    </Box>
+                </Grid>
+            </Grid>
+            <Grid container className='mt-5 mx-2 mx-md-4'>
+                <Box className='p-4 border-10 bg-dark-purple'>
+                    <Grid container spacing={2}>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <Typography className='fw-medium fs-20 text-second ' data-aos="fade-up" gutterBottom>WHY CHOOSE NYMPH INTERNATIONAL LLP?</Typography>
+                            <Typography className='fw-medium fs-32 c-f text-white' data-aos="fade-up" gutterBottom>Your Trusted Partner in Global Business Success</Typography>
+                            <Typography className='fs-14 text-white' data-aos="fade-up">We Combine global expertise with local insights to deliver practical solutions that drive real results. </Typography>
+                        </Grid>
+                        <Grid size={{ xs: 'auto' }} className='d-none d-md-inline-block border border-light my-4'></Grid>
+                        <Grid size={{ xs: 12, md: 'grow' }}>
+                            <List className='gap-3 gap-md-0 text-white p-0 m-0' data-aos="fade-up">
+                                <ListItem className='gap-2'><CheckCircleOutlined className='text-second' /> Global Expertise</ListItem>
+                                <ListItem className='gap-2'><CheckCircleOutlined className='text-second' /> Local Understanding</ListItem>
+                                <ListItem className='gap-2'><CheckCircleOutlined className='text-second' /> Tailored Strategies for Every Business</ListItem>
+                                <ListItem className='gap-2'><CheckCircleOutlined className='text-second' /> End to End Support</ListItem>
+                            </List>
+                        </Grid>
+                        <Grid size={{ xs: 'auto' }} className='d-none d-md-inline-block border border-light my-4'></Grid>
+                        <Grid size={{ xs: 12, md: 'grow' }}>
+                            <List className='gap-3 gap-md-0 text-white p-0 m-0' data-aos="fade-up">
+                                <ListItem className='gap-2'><CheckCircleOutlined className='text-second' /> Data Driven Decisions</ListItem>
+                                <ListItem className='gap-2'><CheckCircleOutlined className='text-second' /> Result Oriented Approch</ListItem>
+                                <ListItem className='gap-2'><CheckCircleOutlined className='text-second' /> Confidientilaity & Integrity</ListItem>
+                            </List>
+                        </Grid>
+                    </Grid>
+                </Box>
+            </Grid>
+            <Box className='mt-5 mx-2 mx-md-4'>
+                <Typography className='fs-24 mb-3 text-main fw-medium' data-aos="fade-up">Our Experties</Typography>
+                <Grid container spacing={2}>
+                    {services.map((service, index) => {
+                        const Icon = service.icon;
+
+                        return (
+                            <Grid data-aos="fade-up" key={index} size={{ xs: 12, sm: 6, lg: 3, xl: 2 }}>
+                                <Box
+                                    className="border h-100 text-center border-10 p-4"
+                                    sx={{
+                                        border: "1px solid #F1F1F1",
+                                        transition: "all .3s ease",
+                                        "&:hover": {
+                                            transform: "translateY(-6px)",
+                                            boxShadow: "0 0px 5px var(--primary-color)",
+                                        },
+                                    }}
+                                >
+                                    <Icon
+                                        size={56}
+                                        strokeWidth={1}
+                                        className="text-main mb-2"
+                                    />
+
+                                    <Typography className="fw-medium fs-20 c-f" gutterBottom>
+                                        {service.title}
+                                    </Typography>
+
+                                    <Typography className="fs-16">
+                                        {service.description}
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                        );
+                    })}
+                </Grid>
+            </Box>
+            <Grid container spacing={3} className="mt-5 mb-3 mx-2 mx-md-4" sx={{ alignItems: 'start' }}>
+                <Grid size={12}>
+                    <Box className='h-100 d-flex flex-column justify-content-center'>
+                        <Typography data-aos="fade-up" className="fw-medium fs-24 text-main">Our Leadership</Typography>
+
+                        <Typography data-aos="fade-up" className="fs-16">
+                            A team of experienced professionals passionate about empowering
+                            businesses and creating impact.
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid size={12}>
+                    <Grid container spacing={3}>
+                        {leadershipData.map((member, index) => (
+                            <Grid
+                                data-aos="fade-up"
+                                key={index}
+                                spacing={2}
+                                size={{ xs: 12, sm: 6, md: 4, xl: 'grow' }}
+                            >
+                                <Box className="border d-flex gap-3 p-2 border-10 align-items-center">
+                                    <Box className='border' sx={{ height: "100px", width:'130px' }}>
+                                        <Box
+                                            component="img"
+                                            src={member.image}
+                                            alt={member.name}
+                                            sx={{
+                                                width: "100%",
+                                                height: "100%",
+                                                // border:'1px solid red',
+                                                objectFit: "cover",
+                                            }}
+                                        />
+                                    </Box>
+                                    <Box>
+                                        <Typography className="fw-medium fs-20">
+                                            {member.name}
+                                        </Typography>
+
+                                        <Typography className='text-main fs-16'>
+                                            {member.designation}
+                                        </Typography>
+
+                                        <Typography
+                                            className="mt-1"
+                                            sx={{
+                                                fontSize: "14px",
+                                                lineHeight: 1.7,
+                                            }}
+                                        >
+                                            {member.description}
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Grid>
+            </Grid>
+
+        </Box>
+    )
+}
+
+export default AboutUs2

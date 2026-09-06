@@ -63,6 +63,16 @@
     line-height: normal !important;
 }
 
+.fs-58 {
+    font-size: clamp(43px, 4.3vw + 1rem, 58px) !important;
+    line-height: normal !important;
+}
+
+.fs-60 {
+    font-size: clamp(44px, 4.4vw + 1rem, 60px) !important;
+    line-height: normal !important;
+}
+
 .fs-62 {
     font-size: clamp(45px, 4.5vw + 1rem, 62px) !important;
     line-height: normal !important;

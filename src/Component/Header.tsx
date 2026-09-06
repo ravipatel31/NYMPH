@@ -134,7 +134,9 @@ function Header() {
                     key={index}
                     onClick={() => {
                       setSelectedMenue(item.value);
+                      if (item?.value == "about" || item?.value == "contact"){
                       navigate(`/${item.value}`);
+                      }
                     }}
                      className={`${isActive ? "text-main border-bottom-gradient-main" : ""} menue-item fs-16 pb-2`}
                   >
@@ -155,7 +157,7 @@ function Header() {
 
             <Box sx={{ ml: "auto", display: { xs: "block", md: "none" } }}>
               <IconButton onClick={() => setOpen(true)}>
-                <MenuIcon className="text-white" />
+                <MenuIcon  />
               </IconButton>
             </Box>
           </Toolbar>
@@ -178,7 +180,9 @@ function Header() {
                   onClick={() => {
                     setOpen(false)
                     setSelectedMenue(item.value);
+                    if (item?.value == "about" || item?.value == "contact"){
                     navigate(`/${item.value}`);
+                    }
                   }}
                   sx={{ borderBottom: "1px solid #FFFFFF1A" }}
                   className={`${isActive ? "text-main" : ""}`}
