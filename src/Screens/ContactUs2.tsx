@@ -6,8 +6,8 @@ import about1 from '../Assets/Images/Contact/contact1.png'
 import contact from '../Assets/Images/Contact/contact2.png'
 
 
-
 function ContactUs2() {
+    // contact us Page
     return (
         <Box>
             <Grid container sx={{ height: {xs:"fit-content", md:'calc(100vh - 80px)'} }} className='position-relative g-bg' >
