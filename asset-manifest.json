@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/NYMPH/static/css/main.e22f980f.css",
-    "main.js": "/NYMPH/static/js/main.bcbc0cfc.js",
+    "main.css": "/NYMPH/static/css/main.453b8734.css",
+    "main.js": "/NYMPH/static/js/main.9fae79c0.js",
     "static/js/453.05dbc509.chunk.js": "/NYMPH/static/js/453.05dbc509.chunk.js",
     "static/media/home1.png": "/NYMPH/static/media/home1.2cb6f7ef665fa0ec1525.png",
     "static/media/contact2.png": "/NYMPH/static/media/contact2.ef5aeb5b5e9c5bc09916.png",
-    "static/media/about1.png": "/NYMPH/static/media/about1.4996aab94045b1981348.png",
+    "static/media/earth.png": "/NYMPH/static/media/earth.6489c506742940546117.png",
     "static/media/earth2.png": "/NYMPH/static/media/earth2.4c37376971bde1c7c5dd.png",
-    "static/media/contact1.png": "/NYMPH/static/media/contact1.209b02bc8cea1a63e090.png",
-    "static/media/home2.png": "/NYMPH/static/media/home2.4eef99d9c3fd47741071.png",
+    "static/media/hero2.png": "/NYMPH/static/media/hero2.7cadc30e3d65b86594e9.png",
+    "static/media/map.png": "/NYMPH/static/media/map.e10d3cad2d79695cdf57.png",
     "static/media/full-logo2.png": "/NYMPH/static/media/full-logo2.8d77f1dcbe1c0a2a8fb6.png",
     "index.html": "/NYMPH/index.html",
-    "main.e22f980f.css.map": "/NYMPH/static/css/main.e22f980f.css.map",
-    "main.bcbc0cfc.js.map": "/NYMPH/static/js/main.bcbc0cfc.js.map",
+    "main.453b8734.css.map": "/NYMPH/static/css/main.453b8734.css.map",
+    "main.9fae79c0.js.map": "/NYMPH/static/js/main.9fae79c0.js.map",
     "453.05dbc509.chunk.js.map": "/NYMPH/static/js/453.05dbc509.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e22f980f.css",
-    "static/js/main.bcbc0cfc.js"
+    "static/css/main.453b8734.css",
+    "static/js/main.9fae79c0.js"
   ]
 }
