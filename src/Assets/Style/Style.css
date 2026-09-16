@@ -29,6 +29,9 @@
 .text-second {
     color: var(--secondary-color) !important;
 }
+.text-grey{
+    color: grey !important;
+}
 
 .MuiTypography-root {
     /* color: #ededed; */
@@ -100,7 +103,9 @@
 .bg-purple {
     background-color: var(--primary-color);
 }
-
+.bg-light-purple {
+    background-color: var(--primary-light-color);
+}
 .menue-item:hover {
     transition: all .1s;
     color: var(--primary-color);

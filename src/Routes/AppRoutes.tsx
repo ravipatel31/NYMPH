@@ -7,6 +7,7 @@ import ContactUs from '../Screens/ContactUs'
 import Home2 from '../Screens/Home2'
 import AboutUs2 from '../Screens/AboutUs2'
 import ContactUs2 from '../Screens/ContactUs2'
+import Services from '../Screens/Services'
 
 function AppRoutes() {
   return (
@@ -24,6 +25,11 @@ function AppRoutes() {
       <Route path="/contact" element={
         <Layout>
           <ContactUs2 />
+        </Layout>
+      } />
+      <Route path="/services" element={
+        <Layout>
+          <Services />
         </Layout>
       } />
     </Routes>

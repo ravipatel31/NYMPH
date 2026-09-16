@@ -134,7 +134,7 @@ function Header() {
                     key={index}
                     onClick={() => {
                       setSelectedMenue(item.value);
-                      if (item?.value == "about" || item?.value == "contact"){
+                      if (item?.value == "about" || item?.value == "contact" || item?.value == "services"){
                       navigate(`/${item.value}`);
                       }
                     }}
@@ -180,7 +180,7 @@ function Header() {
                   onClick={() => {
                     setOpen(false)
                     setSelectedMenue(item.value);
-                    if (item?.value == "about" || item?.value == "contact"){
+                    if (item?.value == "about" || item?.value == "contact" || item?.value == "services"){
                     navigate(`/${item.value}`);
                     }
                   }}
