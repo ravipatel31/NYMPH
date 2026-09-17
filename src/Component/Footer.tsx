@@ -2,8 +2,10 @@ import { Call, Email, Facebook, Instagram, LinkedIn, LocationCityOutlined, Locat
 import { Box, Button, Grid, Typography } from '@mui/material'
 import React from 'react'
 import fulllogo from '../Assets/Images/full-logo2.png'
+import { useNavigate } from 'react-router-dom'
 
 function Footer() {
+    const navigate = useNavigate()
     const menuItems = [
         "About Us",
         "Services",
@@ -42,11 +44,11 @@ function Footer() {
 
                 }}>
                     <Box>
-                        <Typography variant='h4' className='text-white c-f mb-1'>Ready to Take Your Business Beyond Borders ?</Typography>
-                        <Typography variant='body2' className='text-white'>Let's build your success story together.</Typography>
+                        <Typography variant='h4' className='text-white c-f mb-1'>Ready to Explore New Growth Opportunities?</Typography>
+                        <Typography variant='body2' className='text-white'>Connect with Nymph International LLP for strategic business advisory, global expansion, corporate training, and international growth solutions.</Typography>
                     </Box>
                     <Box>
-                        <Button className='bg-white border-10 text-main px-3 py-2' sx={{ textTransform: "none" }}>Book a Free Consultation</Button>
+                        <Button className='bg-white border-10 text-main px-3 py-2' onClick={()=>{navigate('/contact')}} sx={{ textTransform: "none" }}>Contact Us</Button>
                     </Box>
                 </Box>
                 <Grid container spacing={{xs:2,md:3}} sx={{alignItems: 'stretch', marginTop: '50px' }}>

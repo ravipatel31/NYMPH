@@ -11,13 +11,15 @@ import {
     ListItem,
     Typography,
 } from "@mui/material";
-import { ArrowForward, ArrowRightAlt, BorderBottom, CalendarMonthOutlined, CampaignOutlined, CheckCircleOutlined, DescriptionOutlined, FactCheckOutlined, GroupOutlined, KeyboardArrowLeft, KeyboardArrowRight, PeopleOutlineOutlined, PublicOutlined, RocketLaunchOutlined, SettingsOutlined, TokenOutlined, TrackChangesOutlined, TrendingUpOutlined } from "@mui/icons-material";
+import { ArrowForward, ArrowRightAlt, BoltOutlined, BorderBottom, CalendarMonthOutlined, CampaignOutlined, CheckCircleOutlined, Computer, ComputerOutlined, DescriptionOutlined, FactCheckOutlined, GroupOutlined, KeyboardArrowLeft, KeyboardArrowRight, LocalHospital, LocalHospitalOutlined, LocationCityOutlined, PeopleOutlineOutlined, PhoneInTalk, PublicOutlined, RocketLaunchOutlined, RoomServiceOutlined, SettingsOutlined, TokenOutlined, TrackChangesOutlined, TrendingUpOutlined } from "@mui/icons-material";
 import map from '../Assets/Images/map.png'
 import Counter from "../Component/Counter";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import blog1 from '../Assets/Images/earth.png'
 import blog2 from '../Assets/Images/earth2.png'
 import blog3 from '../Assets/Images/home1.png'
+import whoweare from '../Assets/Images/WhoWeAre.png'
+import iws from '../Assets/Images/industriesweserve.png'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -25,6 +27,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 export default function Home2() {
+    const navigate = useNavigate()
 
 
     const companies = [
@@ -99,43 +102,75 @@ export default function Home2() {
             icon: <PublicOutlined className="text-white fs-32" />,
         },
     ];
+    const Inudtries = [
+        {
+            id: 1,
+            title: "Information Technology",
+            icon: <ComputerOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 2,
+            title: "Healthcare & Biotech",
+            icon: <LocalHospitalOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 3,
+            title: "Hospitality Management",
+            icon: <RoomServiceOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 4,
+            title: "Energy & Utilities",
+            icon: <BoltOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 5,
+            title: "Industrial & Heavy Machinery",
+            icon: <SettingsOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 6,
+            title: "Real Estate & Infrastructure",
+            icon: <LocationCityOutlined className="text-white fs-32" />,
+        },
+    ];
 
 
     const processSteps = [
         {
             no: "01",
             icon: <CalendarMonthOutlined className="fs-36 text-main" />,
-            title: "Discover",
+            title: "Understand",
             description:
-                "We understand your business, goals and challenges.",
+                "We begin by understanding your business, objectives, challenges, market position, and growth ambitions.",
         },
         {
             no: "02",
             icon: <FactCheckOutlined className="fs-36 text-main" />,
-            title: "Analyze",
+            title: "Assess",
             description:
-                "We research, evaluate and identify the right opportunities.",
+                "We evaluate your business environment, opportunities, operations, and market requirements to identify areas for improvement and growth.",
         },
         {
             no: "03",
             icon: <TrackChangesOutlined className="fs-36 text-main" />,
-            title: "Strategize",
+            title: "Plan",
             description:
-                "We create a customised strategy tailored to your business needs.",
+                "We develop practical strategies tailored to your business objectives, whether you are seeking growth, transformation, or international expansion.",
         },
         {
             no: "04",
             icon: <RocketLaunchOutlined className="fs-36 text-main" />,
-            title: "Execute",
+            title: "Implement",
             description:
-                "We implement the plan with precision and expert guidance.",
+                "We support the transition from strategy to practical execution through focused advisory, training, and implementation guidance.",
         },
         {
             no: "05",
             icon: <TrendingUpOutlined className="fs-36 text-main" />,
-            title: "Grow",
+            title: "Scale",
             description:
-                "We measure results and support sustainable long-term growth.",
+                "We focus on sustainable growth, continuous improvement, and opportunities for long-term business development.",
         },
     ];
 
@@ -167,12 +202,12 @@ export default function Home2() {
     ];
     return (
         <Box>
-            <Grid container sx={{height: {xs:"fit-content",md:'calc(100vh - 80px)'}}} className='position-relative g-bg'>
-                <Grid size={{ xs: 12, md: 5.5 }} className='my-0 my-md-auto' sx={{ px: {xs:2,md:3}, pt: 5, zIndex: 2 }}>
+            <Grid container sx={{ height: { xs: "fit-content", md: 'calc(100vh - 80px)' } }} className='position-relative g-bg'>
+                <Grid size={{ xs: 12, md: 5.5 }} className='my-0 my-md-auto' sx={{ px: { xs: 2, md: 3 }, pt: 5, zIndex: 2 }}>
                     <Typography className='text-second fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>GLOBAL THINKING LOCAL EXPERTISE</Typography>
                     <Typography className='fw-medium fs-58 c-f mt-2' sx={{ whiteSpace: { xs: "normal", md: "nowrap" } }} data-aos="fade-up">We Build Businesses</Typography>
-                    <Typography className='fw-medium mb-3 fs-58 c-f' data-aos="fade-up" sx={{whiteSpace:{xs:"auto",md:'nowrap'}}}><span className='text-main' style={{fontStyle:'italic'}}>That Build</span> the world</Typography>
-                    <Typography data-aos="fade-up">Global Cosulting, Stretegic Solutions & International <br /> Expansion For Sustainable Growth.</Typography>
+                    <Typography className='fw-medium mb-3 fs-58 c-f' data-aos="fade-up" sx={{ whiteSpace: { xs: "auto", md: 'nowrap' } }}><span className='text-main' style={{ fontStyle: 'italic' }}>That Build</span> the world</Typography>
+                    <Typography data-aos="fade-up">Nymph International LLP provides high-impact strategic advisory and business growth solutions to help organizations, entrepreneurs, executives, and students navigate complex markets, optimize operations, and unlock international growth.</Typography>
                     <List className='d-flex flex-column flex-md-row gap-3 gap-md-0  p-0 m-0 mt-3' data-aos="fade-up">
                         <ListItem className='gap-2 m-0 p-0'><CheckCircleOutlined className='text-main' /> Stretegy</ListItem>
                         <ListItem className='gap-2 p-0'><CheckCircleOutlined className='text-main' /> Execusion</ListItem>
@@ -180,11 +215,11 @@ export default function Home2() {
                         <ListItem className='gap-2 p-0'><CheckCircleOutlined className='text-main' /> Global Presence</ListItem>
                     </List>
                     <Box className='d-flex flex-column flex-md-row gap-1 gap-md-3'>
-                        <Button className='btn-main text-white px-4 py-2 mt-4' data-aos="fade-up">
-                            Book Free Consultation
+                        <Button onClick={() => { navigate('/services') }} className='btn-main text-white px-4 py-2 mt-4' data-aos="fade-up">
+                            Explore Our Services
                         </Button>
-                        <Button variant='outlined' className='btn-outlined-main text-main px-4 py-2 mt-4' data-aos="fade-up">
-                            Explore Videos
+                        <Button variant='outlined' onClick={() => { navigate('/contact') }} className='btn-outlined-main text-main px-4 py-2 mt-4' data-aos="fade-up">
+                            <PhoneInTalk />&nbsp; Contact Us
                         </Button>
                     </Box>
                 </Grid>
@@ -192,42 +227,26 @@ export default function Home2() {
                     <Box className='hero-section h-100 w-100'></Box>
                 </Grid>
             </Grid>
-            <Box className='m-2 m-lg-5'>
-                <Typography className="text-main fw-medium fs-20 text-center mb-2" data-aos="fade-up" gutterBottom>TRUSTED BY VISIONARY BUSINESS</Typography>
-                <Grid container spacing={2} className='justify-content-center'>
-                    {companies.map((company) => (
-                        <Grid key={company.id} data-aos="fade-up" size={{ xs: 12, sm: 6, md: 4, lg: "auto" }}>
-                            <Box className="d-flex align-items-center gap-2 bg-grey p-3 border-10">
-                                <TokenOutlined className="fs-42" />
 
-                                <Box>
-                                    <Typography
-                                        variant="h6"
-                                        className="fw-bold m-0 p-0"
-                                        sx={{ lineHeight: "normal" }}
-                                    >
-                                        {company.name}
-                                    </Typography>
 
-                                    <Typography
-                                        variant="body2"
-                                        className="m-0 p-0"
-                                        sx={{ lineHeight: "normal" }}
-                                    >
-                                        {company.type}
-                                    </Typography>
-                                </Box>
-                            </Box>
-                        </Grid>
-                    ))}
+            <Grid container className='p-2 p-lg-5' spacing={1.5}>
+                <Grid size={{ xs: 12, md: 5 }}>
+                    <Typography className="text-main fw-medium fs-20 mb-2" data-aos="fade-up" gutterBottom>WHO WE ARE</Typography>
+                    <Typography className="fw-bold my-3 c-f fs-42" data-aos="fade-up">Empowering Businesses <br /> to <span className="text-main">Grow Globally</span></Typography>
+                    <Typography className="fs-16 mb-3" data-aos="fade-up">Nymph International LLP is a strategic advisory and business growth firm providing practical solutions for organizations seeking sustainable growth, operational improvement, international expansion, and professional development.</Typography>
+                    <Typography className="fs-16" data-aos="fade-up">As the global expansion entity of Riddhi Management Consultancy, established in 2012 in Ahmedabad, Gujarat, India, Nymph International LLP builds on more than a decade of domain expertise to bridge the gap between high-level advisory and practical execution.</Typography>
+
                 </Grid>
-            </Box>
+                <Grid size={{ xs: 12, md: 7 }}>
+                    <Box component={'img'} src={whoweare} className="w-100 border-10" data-aos="zoom-in" />
+                </Grid>
+            </Grid>
 
             <Grid container spacing={2} className='p-4 bg'>
                 <Grid size={{ xs: 12, md: 5 }} className='d-flex flex-column justify-content-center align-items-start' sx={{ gap: '100px' }}>
                     <Box>
                         <Typography className="fs-20 fw-medium text-second" data-aos="fade-up" gutterBottom>WHAT WE DO</Typography>
-                        <Typography  className="fw-bold my-3 c-f fs-42" data-aos="fade-up">End-to-End Solutions <br /> for <span className="text-main"> Sustainable Growth</span></Typography>
+                        <Typography className="fw-bold my-3 c-f fs-42" data-aos="fade-up">End-to-End Solutions <br /> for <span className="text-main"> Sustainable Growth</span></Typography>
                         <Typography className="fs-16" data-aos="fade-up">From Stretegy to execution, we provide comprehensive consulting services tailored to your business goals.</Typography>
                     </Box>
                     <Box>
@@ -281,8 +300,8 @@ export default function Home2() {
 
             <Grid container className='p-2 p-md-4 my-3 bg-dark-purple'>
                 <Grid size={{ xs: 12, md: 5 }} className='p-3 p-md-4'>
-                    <Typography className="text-white fs-20 fw-medium" data-aos="fade-up">OUR IMPACT</Typography>
-                    <Typography variant="h3" className="text-white my-3 c-f" data-aos="fade-up">Creating Impact <br /> Across the Globe</Typography>
+                    <Typography className="text-white fs-20 fw-medium" data-aos="fade-up">OUR GLOBAL REACH</Typography>
+                    <Typography variant="h3" className="text-white my-3 c-f" data-aos="fade-up">Helping Businesses Grow Across Borders </Typography>
                     <hr className="border" data-aos="zoom-in" style={{ width: '70px' }} />
                     <Grid container spacing={3} className='align-items-center'>
                         <Grid size={'auto'}>
@@ -333,7 +352,7 @@ export default function Home2() {
                     </Grid>
                 </Grid>
                 <Grid size={{ xs: 12, md: 7 }} className='justify-contnet-end overflow-hidden align-items-center'>
-                    <Box component={'img'} src={map} data-aos="zoom-in" sx={{height:{xs:"250px",md:'350px'}}} width={'100%'}></Box>
+                    <Box component={'img'} src={map} data-aos="zoom-in" sx={{ height: { xs: "250px", md: '350px' } }} width={'100%'}></Box>
                 </Grid>
             </Grid>
 
@@ -343,7 +362,7 @@ export default function Home2() {
                         className="fs-20 text-main fw-medium text-center"
                         data-aos="fade-up"
                     >
-                        OUR PROCESS
+                        OUR APPROACH
                     </Typography>
 
                     <Typography
@@ -351,7 +370,7 @@ export default function Home2() {
                         className="fw-medium text-center mb-5 c-f"
                         data-aos="fade-up"
                     >
-                        A Proven Process to Achieve Global Success
+                        From Business Challenges to Sustainable Growth
                     </Typography>
                 </Grid>
 
@@ -362,7 +381,7 @@ export default function Home2() {
                     <Box
                         sx={{
                             position: "absolute",
-                            display:{xs:"none", md:'inline-block'},
+                            display: { xs: "none", md: 'inline-block' },
                             top: 30,
                             left: "8%",
                             right: "8%",
@@ -422,7 +441,55 @@ export default function Home2() {
                 </Grid>
             </Grid>
 
-            <Grid
+            <Grid container spacing={2} className='p-4 bg-light-purple'>
+                <Grid size={{ xs: 12, md: 5 }} className='d-flex flex-column justify-content-center align-items-start'>
+                    <Box>
+                        <Typography className="fs-20 fw-medium text-main" data-aos="fade-up" gutterBottom>INDUSTRIES WE SERVE</Typography>
+                        <Typography className="fw-bold my-3 c-f fs-42" data-aos="fade-up">Industry Expertise Across <span className="text-main">Diverse Sectors</span></Typography>
+                    </Box>
+                    <Box component={'img'} src={iws} className="w-100 flex-1" />
+
+                </Grid>
+                <Grid size={{ xs: 12, md: 'grow' }}>
+                    <Grid container spacing={2}>
+                        {Inudtries.map((service) => (
+                            <Grid
+                                data-aos="fade-up"
+                                key={service.id}
+                                size={{ xs: 12, sm: 6, md: 4 }}
+                            >
+                                <Box
+                                    className="p-3 bg-white border-10 h-100"
+                                    sx={{
+                                        border: "1px solid #F1F1F1",
+                                        transition: "all .3s ease",
+                                        "&:hover": {
+                                            transform: "translateY(-6px)",
+                                            boxShadow: "0 10px 30px var(--primary-light-color)",
+                                        },
+                                    }}
+                                >
+                                    <Box className="p-2 border-50 bg-purple d-inline-flex">
+                                        {service.icon}
+                                    </Box>
+
+                                    <Typography
+                                        variant="h6"
+                                        className="fw-bold my-3 c-f"
+                                        sx={{ lineHeight: 1.2 }}
+                                    >
+                                        {service.title}
+                                    </Typography>
+
+                                </Box>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+             <Grid
                 container
                 spacing={5}
                 className="p-4 w-100 align-items-center"
@@ -467,7 +534,7 @@ export default function Home2() {
                         }}
                     >
                         {blogs.map((blog, index) => (
-                            <SwiperSlide  key={index} className="h-100">
+                            <SwiperSlide key={index} className="h-100">
                                 <Card
                                     data-aos="fade-up"
                                     elevation={0}
@@ -573,6 +640,52 @@ export default function Home2() {
                     </Box>
                 </Grid>
             </Grid>
+
+            <Grid container className='p-2 p-lg-5' spacing={2.5}>
+                <Grid size={{ xs: 12, md: 5 }}>
+                    <Box component={'img'} src={whoweare} className="w-100 border-10" data-aos="zoom-in" />
+                </Grid>
+                <Grid size={{ xs: 12, md: 7 }}>
+                    <Typography className="text-main fw-medium fs-20" data-aos="fade-up" gutterBottom>WHY NYMPH INTERNATIONAL?</Typography>
+                    <Typography className="fw-bold my-3 c-f fs-42" data-aos="fade-up">From Strategy to<br /><span className="text-main">Practical Execution</span></Typography>
+                    <Typography className="fs-16 mb-3" data-aos="fade-up">Backed by more than a decade of hands-on expertise, Nymph International LLP bridges the gap between strategic advisory and real-world execution.</Typography>
+                    <Typography className="fs-16" data-aos="fade-up">Whether you are transforming business operations, expanding into international markets, or developing corporate leadership capabilities, our approach focuses on practical solutions designed around your goals.</Typography>
+
+                </Grid>
+            </Grid>
+
+            {/* <Box className='m-2 m-lg-5'>
+                <Typography className="text-main fw-medium fs-20 text-center mb-2" data-aos="fade-up" gutterBottom>TRUSTED BY VISIONARY BUSINESS</Typography>
+                <Grid container spacing={2} className='justify-content-center'>
+                    {companies.map((company) => (
+                        <Grid key={company.id} data-aos="fade-up" size={{ xs: 12, sm: 6, md: 4, lg: "auto" }}>
+                            <Box className="d-flex align-items-center gap-2 bg-grey p-3 border-10">
+                                <TokenOutlined className="fs-42" />
+
+                                <Box>
+                                    <Typography
+                                        variant="h6"
+                                        className="fw-bold m-0 p-0"
+                                        sx={{ lineHeight: "normal" }}
+                                    >
+                                        {company.name}
+                                    </Typography>
+
+                                    <Typography
+                                        variant="body2"
+                                        className="m-0 p-0"
+                                        sx={{ lineHeight: "normal" }}
+                                    >
+                                        {company.type}
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box> */}
+
+           
         </Box>
     );
 }
