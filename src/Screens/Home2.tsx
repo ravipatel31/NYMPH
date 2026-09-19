@@ -2133,10 +2133,10 @@ export default function Home2() {
                                         className="text-white fw-medium text-center"
                                     />
                                     <Typography
-                                        className="text-white"
+                                        className="text-white text-center"
                                         variant="body2"
                                         data-aos="fade-up"
-                                        sx={{ maxWidth: 100 }}
+                                        // sx={{ maxWidth: 100 }}
                                     >
                                         {stat.label}
                                     </Typography>
