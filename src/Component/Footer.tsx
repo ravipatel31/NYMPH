@@ -1,10 +1,37 @@
-import { Call, Email, Facebook, Instagram, LinkedIn, LocationCityOutlined, LocationPin, Twitter, X } from '@mui/icons-material'
+import { Call, Email, Facebook, Instagram, LinkedIn, LocationCityOutlined, LocationPin, PhoneInTalk, Twitter, X } from '@mui/icons-material'
 import { Box, Button, Grid, Typography } from '@mui/material'
 import React from 'react'
 import fulllogo from '../Assets/Images/full-logo2.png'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+
+
 
 function Footer() {
+    const location = useLocation()
+
+    const ctacontent = () => {
+        switch (location.pathname) {
+            case '/':
+                return {
+                    title: "Ready to Grow Beyond Your Local Market?",
+                    text: "Tell us where your business is today and where you want it to be. We'll help you plan the route."
+                };
+
+            case '/about':
+                return {
+                    title: "Work With NYMPH International",
+                    text: "Whether you are planning expansion, transformation or team development, let's talk about what you need."
+                };
+
+            default:
+                return {
+                    title: "Ready to Explore New Growth Opportunities?",
+                    text: "Connect with NYMPH International LLP for strategic business advisory, global expansion, corporate training, and international growth solutions."
+                };
+        }
+    };
+
+    const ctaContent = ctacontent();
     const navigate = useNavigate()
     const menuItems = [
         "About Us",
@@ -26,11 +53,11 @@ function Footer() {
         <Box>
             <Box className='border-10 bg-purple p-2 px-3 mb-3 mx-3 d-block d-md-none'>
                 <Box>
-                    <Typography variant='h6' className='text-white c-f'>Ready to Take Your Business Beyond Borders ?</Typography>
-                    <Typography variant='body2' className='text-white mt-1'>Let's build your success story together.</Typography>
+                    <Typography variant='h6' className='text-white c-f'>{ctaContent.title}</Typography>
+                    <Typography variant='body2' className='text-white mt-1'>{ctaContent.text}</Typography>
                 </Box>
                 <Box className='mt-4'>
-                    <Button className='bg-white border-10 text-main px-3 py-2 mb-1' sx={{ textTransform: "none" }}>Book a Free Consultation</Button>
+                    <Button className='bg-white border-10 text-main px-3 py-2 mb-1' sx={{ textTransform: "none" }}><PhoneInTalk />&nbsp; Talk to Us</Button>
                 </Box>
             </Box>
             <Box className='border-main-top position-relative mt-md-5 mt-0' sx={{ px: { xs: 1, lg: 4 }, py: { xs: 1, md: 3 }, bgcolor: 'rgb(20,22,27)' }}>
@@ -44,14 +71,14 @@ function Footer() {
 
                 }}>
                     <Box>
-                        <Typography variant='h4' className='text-white c-f mb-1'>Ready to Explore New Growth Opportunities?</Typography>
-                        <Typography variant='body2' className='text-white'>Connect with Nymph International LLP for strategic business advisory, global expansion, corporate training, and international growth solutions.</Typography>
+                        <Typography variant='h4' className='text-white c-f mb-1'>{ctaContent.title}</Typography>
+                        <Typography variant='body2' className='text-white'>{ctaContent.text}</Typography>
                     </Box>
                     <Box>
-                        <Button className='bg-white border-10 text-main px-3 py-2' onClick={()=>{navigate('/contact')}} sx={{ textTransform: "none" }}>Contact Us</Button>
+                        <Button className='bg-white border-10 text-main px-3 py-2' onClick={() => { navigate('/contact') }} sx={{ textTransform: "none" }}><PhoneInTalk />&nbsp; Talk to Us</Button>
                     </Box>
                 </Box>
-                <Grid container spacing={{xs:2,md:3}} sx={{alignItems: 'stretch', marginTop: '50px' }}>
+                <Grid container spacing={{ xs: 2, md: 3 }} sx={{ alignItems: 'stretch', marginTop: '50px' }}>
                     <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                         <Box sx={{ height: '60px' }} component={'img'} src={fulllogo} className='mb-3'></Box>
                         <Typography className='fs-14 mb-3 text-white'>NYMPH International LLP is a global consulting <br /> firm specializing in business managemnet,  <br /> stretegoc growth and international expansion.</Typography>
