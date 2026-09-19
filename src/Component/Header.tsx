@@ -24,12 +24,12 @@ const menuItems = [
     value: 'services',
     label: "Services"
   },
+  // {
+  //   value: 'global expansion',
+  //   label: 'Global Expansion'
+  // },
   {
-    value: 'global expansion',
-    label: 'Global Expansion'
-  },
-  {
-    value: "trainig & workshop",
+    value: "training&workshop",
     label: "Training & Workshop"
   }, {
     value: "contact",
@@ -134,9 +134,9 @@ function Header() {
                     key={index}
                     onClick={() => {
                       setSelectedMenue(item.value);
-                      if (item?.value == "about" || item?.value == "contact" || item?.value == "services"){
+                      // if (item?.value == "about" || item?.value == "contact" || item?.value == "services"){
                       navigate(`/${item.value}`);
-                      }
+                      // }
                     }}
                      className={`${isActive ? "text-main border-bottom-gradient-main" : ""} menue-item fs-16 pb-2`}
                   >
@@ -180,9 +180,9 @@ function Header() {
                   onClick={() => {
                     setOpen(false)
                     setSelectedMenue(item.value);
-                    if (item?.value == "about" || item?.value == "contact" || item?.value == "services"){
+                    // if (item?.value == "about" || item?.value == "contact" || item?.value == "services"){
                     navigate(`/${item.value}`);
-                    }
+                    // }
                   }}
                   sx={{ borderBottom: "1px solid #FFFFFF1A" }}
                   className={`${isActive ? "text-main" : ""}`}

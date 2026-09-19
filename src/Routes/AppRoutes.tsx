@@ -8,6 +8,7 @@ import Home2 from '../Screens/Home2'
 import AboutUs2 from '../Screens/AboutUs2'
 import ContactUs2 from '../Screens/ContactUs2'
 import Services from '../Screens/Services'
+import TrainingWorkshops from '../Screens/TrainigWorkshops'
 
 function AppRoutes() {
   return (
@@ -30,6 +31,11 @@ function AppRoutes() {
       <Route path="/services" element={
         <Layout>
           <Services />
+        </Layout>
+      } />
+      <Route path="/training&workshop" element={
+        <Layout>
+          <TrainingWorkshops />
         </Layout>
       } />
     </Routes>
