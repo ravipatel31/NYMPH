@@ -11,7 +11,7 @@ import {
     ListItem,
     Typography,
 } from "@mui/material";
-import { ArrowForward, ArrowRightAlt, BoltOutlined, BorderBottom, CalendarMonthOutlined, CampaignOutlined, CheckCircleOutlined, Computer, ComputerOutlined, DescriptionOutlined, FactCheckOutlined, GroupOutlined, KeyboardArrowLeft, KeyboardArrowRight, LocalHospital, LocalHospitalOutlined, LocationCityOutlined, PeopleOutlineOutlined, PhoneInTalk, PublicOutlined, RocketLaunchOutlined, RoomServiceOutlined, SettingsOutlined, TokenOutlined, TrackChangesOutlined, TrendingUpOutlined } from "@mui/icons-material";
+import { ArrowForward, ArrowRightAlt, BoltOutlined, BorderBottom, BusinessCenterOutlined, CalendarMonthOutlined, CampaignOutlined, CheckCircleOutlined, Computer, ComputerOutlined, DescriptionOutlined, FactCheckOutlined, FlightTakeoffOutlined, GroupOutlined, GroupsOutlined, KeyboardArrowLeft, KeyboardArrowRight, LocalHospital, LocalHospitalOutlined, LocationCityOutlined, PeopleOutlineOutlined, PhoneInTalk, PublicOutlined, RocketLaunchOutlined, RoomServiceOutlined, SchoolOutlined, SettingsOutlined, TokenOutlined, TrackChangesOutlined, TrendingUpOutlined } from "@mui/icons-material";
 import map from '../Assets/Images/map.png'
 import Counter from "../Component/Counter";
 import { Link, useNavigate } from "react-router-dom";
@@ -100,6 +100,43 @@ export default function Home2() {
             description:
                 "Expand globally with our expert support in market entry and compliance.",
             icon: <PublicOutlined className="text-white fs-32" />,
+        },
+    ];
+    const services2 = [
+        {
+            id: 1,
+            title: "Strategic Business Consulting",
+            description:
+                "Strategies for sustainable growth, operational excellence, and digital transformation.",
+            icon: <BusinessCenterOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 2,
+            title: "Global Business Expansion",
+            description:
+                "Expert support for expanding your business into international markets.",
+            icon: <PublicOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 3,
+            title: "Corporate Seminars & Workshops",
+            description:
+                "Practical learning programs for leaders, professionals, founders, and students.",
+            icon: <GroupsOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 4,
+            title: "Overseas Education Advisory",
+            description:
+                "Guidance for international education and university admissions.",
+            icon: <SchoolOutlined className="text-white fs-32" />,
+        },
+        {
+            id: 5,
+            title: "Global Mobility Support",
+            description:
+                "Guidance for international business setup and market entry.",
+            icon: <FlightTakeoffOutlined className="text-white fs-32" />,
         },
     ];
     const Inudtries = [
@@ -205,9 +242,9 @@ export default function Home2() {
             <Grid container sx={{ height: { xs: "fit-content", md: 'calc(100vh - 80px)' } }} className='position-relative g-bg'>
                 <Grid size={{ xs: 12, md: 5.5 }} className='my-0 my-md-auto' sx={{ px: { xs: 2, md: 3 }, pt: 5, zIndex: 2 }}>
                     <Typography className='text-second fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>GLOBAL THINKING LOCAL EXPERTISE</Typography>
-                    <Typography className='fw-medium fs-58 c-f mt-2' sx={{ whiteSpace: { xs: "normal", md: "nowrap" } }} data-aos="fade-up">We Build Businesses</Typography>
-                    <Typography className='fw-medium mb-3 fs-58 c-f' data-aos="fade-up" sx={{ whiteSpace: { xs: "auto", md: 'nowrap' } }}><span className='text-main' style={{ fontStyle: 'italic' }}>That Build</span> the world</Typography>
-                    <Typography data-aos="fade-up">Nymph International LLP provides high-impact strategic advisory and business growth solutions to help organizations, entrepreneurs, executives, and students navigate complex markets, optimize operations, and unlock international growth.</Typography>
+                    <Typography className='fw-medium fs-58 c-f mt-2' sx={{ whiteSpace: { xs: "normal", md: "nowrap" } }} data-aos="fade-up">Empowering Businesses</Typography>
+                    <Typography className='fw-medium mb-3 fs-58 c-f' data-aos="fade-up" sx={{ whiteSpace: { xs: "auto", md: 'nowrap' } }}>to <span className='text-main' style={{ fontStyle: 'italic' }}>Grow Globally</span></Typography>
+                    <Typography data-aos="fade-up">Strategic consulting, business development and international expansion support for businesses, organizations and entrepreneurs seeking sustainable growth.</Typography>
                     <List className='d-flex flex-column flex-md-row gap-3 gap-md-0  p-0 m-0 mt-3' data-aos="fade-up">
                         <ListItem className='gap-2 m-0 p-0'><CheckCircleOutlined className='text-main' /> Stretegy</ListItem>
                         <ListItem className='gap-2 p-0'><CheckCircleOutlined className='text-main' /> Execusion</ListItem>
@@ -219,7 +256,7 @@ export default function Home2() {
                             Explore Our Services
                         </Button>
                         <Button variant='outlined' onClick={() => { navigate('/contact') }} className='btn-outlined-main text-main px-4 py-2 mt-4' data-aos="fade-up">
-                            <PhoneInTalk />&nbsp; Contact Us
+                            <PhoneInTalk />&nbsp; Talk to Us
                         </Button>
                     </Box>
                 </Grid>
@@ -255,7 +292,7 @@ export default function Home2() {
                 </Grid>
                 <Grid size={{ xs: 12, md: 'grow' }}>
                     <Grid container spacing={2}>
-                        {services.map((service) => (
+                        {services2.map((service) => (
                             <Grid
                                 data-aos="fade-up"
                                 key={service.id}
@@ -488,13 +525,12 @@ export default function Home2() {
                 </Grid>
             </Grid>
 
-
+            {/* 
              <Grid
                 container
                 spacing={5}
                 className="p-4 w-100 align-items-center"
             >
-                {/* Left Content */}
                 <Grid size={{ xs: 12, md: 4 }}>
                     <Typography
                         className="text-main fw-medium mb-2 fs-20"
@@ -587,7 +623,6 @@ export default function Home2() {
                         ))}
                     </Swiper>
 
-                    {/* Navigation Buttons */}
                     <Box
                         sx={{
                             position: "absolute",
@@ -639,7 +674,7 @@ export default function Home2() {
                         </IconButton>
                     </Box>
                 </Grid>
-            </Grid>
+            </Grid> */}
 
             <Grid container className='p-2 p-lg-5' spacing={2.5}>
                 <Grid size={{ xs: 12, md: 5 }}>
@@ -685,7 +720,7 @@ export default function Home2() {
                 </Grid>
             </Box> */}
 
-           
+
         </Box>
     );
 }
