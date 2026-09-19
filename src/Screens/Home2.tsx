@@ -63,42 +63,21 @@ export default function Home2() {
             id: 1,
             title: "Business Consulting",
             description:
-                "Strategic solutions to improve performance and drive long-term growth.",
-            icon: <GroupOutlined className="text-white fs-32" />,
+                "Strategic, financial, operational, HR, technology, and marketing solutions.",
+            icon: <BusinessCenterOutlined className="text-white fs-32" />,
         },
         {
             id: 2,
-            title: "Finance Consulting",
+            title: "Corporate Training",
             description:
-                "Optimize financial strategy, manage risks and improve profitability.",
-            icon: <DescriptionOutlined className="text-white fs-32" />,
+                "Practical learning programs designed to strengthen professional and organizational capabilities.",
+            icon: <GroupsOutlined className="text-white fs-32" />,
         },
         {
             id: 3,
-            title: "Marketing Strategy",
-            description:
-                "Build powerful brands and reach the right markets effectively.",
-            icon: <CampaignOutlined className="text-white fs-32" />,
-        },
-        {
-            id: 4,
-            title: "Human Resources",
-            description:
-                "Empower your people and build a high-performance culture.",
-            icon: <PeopleOutlineOutlined className="text-white fs-32" />,
-        },
-        {
-            id: 5,
-            title: "Operations & Production",
-            description:
-                "Streamline operations and enhance efficiency across your value chain.",
-            icon: <SettingsOutlined className="text-white fs-32" />,
-        },
-        {
-            id: 6,
             title: "International Expansion",
             description:
-                "Expand globally with our expert support in market entry and compliance.",
+                "Support for businesses exploring new markets, international setup, and global growth opportunities.",
             icon: <PublicOutlined className="text-white fs-32" />,
         },
     ];
@@ -244,7 +223,7 @@ export default function Home2() {
                     <Typography className='text-second fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>GLOBAL THINKING LOCAL EXPERTISE</Typography>
                     <Typography className='fw-medium fs-58 c-f mt-2' sx={{ whiteSpace: { xs: "normal", md: "nowrap" } }} data-aos="fade-up">Empowering Businesses</Typography>
                     <Typography className='fw-medium mb-3 fs-58 c-f' data-aos="fade-up" sx={{ whiteSpace: { xs: "auto", md: 'nowrap' } }}>to <span className='text-main' style={{ fontStyle: 'italic' }}>Grow Globally</span></Typography>
-                    <Typography data-aos="fade-up">Strategic consulting, business development and international expansion support for businesses, organizations and entrepreneurs seeking sustainable growth.</Typography>
+                    <Typography data-aos="fade-up">Practical consulting, professional development, and international expansion solutions designed to help businesses turn opportunities into sustainable growth.</Typography>
                     <List className='d-flex flex-column flex-md-row gap-3 gap-md-0  p-0 m-0 mt-3' data-aos="fade-up">
                         <ListItem className='gap-2 m-0 p-0'><CheckCircleOutlined className='text-main' /> Stretegy</ListItem>
                         <ListItem className='gap-2 p-0'><CheckCircleOutlined className='text-main' /> Execusion</ListItem>
@@ -269,10 +248,9 @@ export default function Home2() {
             <Grid container className='p-2 p-lg-5' spacing={1.5}>
                 <Grid size={{ xs: 12, md: 5 }}>
                     <Typography className="text-main fw-medium fs-20 mb-2" data-aos="fade-up" gutterBottom>WHO WE ARE</Typography>
-                    <Typography className="fw-bold my-3 c-f fs-42" data-aos="fade-up">Empowering Businesses <br /> to <span className="text-main">Grow Globally</span></Typography>
-                    <Typography className="fs-16 mb-3" data-aos="fade-up">Nymph International LLP is a strategic advisory and business growth firm providing practical solutions for organizations seeking sustainable growth, operational improvement, international expansion, and professional development.</Typography>
-                    <Typography className="fs-16" data-aos="fade-up">As the global expansion entity of Riddhi Management Consultancy, established in 2012 in Ahmedabad, Gujarat, India, Nymph International LLP builds on more than a decade of domain expertise to bridge the gap between high-level advisory and practical execution.</Typography>
-
+                    <Typography className="fw-bold my-3 c-f fs-42" data-aos="fade-up">Your Partner for <span className="text-main">Business Growth</span></Typography>
+                    <Typography className="fs-16 mb-3" data-aos="fade-up">Nymph International helps organizations strengthen their operations, develop their people, embrace transformation, and explore international opportunities through practical, outcome-focused solutions.</Typography>
+                    <Link to={'/about'} className="text-main">Discover NYMPH <ArrowRightAlt /></Link>
                 </Grid>
                 <Grid size={{ xs: 12, md: 7 }}>
                     <Box component={'img'} src={whoweare} className="w-100 border-10" data-aos="zoom-in" />
@@ -280,19 +258,19 @@ export default function Home2() {
             </Grid>
 
             <Grid container spacing={2} className='p-4 bg'>
-                <Grid size={{ xs: 12, md: 5 }} className='d-flex flex-column justify-content-center align-items-start' sx={{ gap: '100px' }}>
+                <Grid size={{ xs: 12, md: 5 }} className='d-flex flex-column justify-content-center align-items-start' sx={{ gap: '30px' }}>
                     <Box>
                         <Typography className="fs-20 fw-medium text-second" data-aos="fade-up" gutterBottom>WHAT WE DO</Typography>
                         <Typography className="fw-bold my-3 c-f fs-42" data-aos="fade-up">End-to-End Solutions <br /> for <span className="text-main"> Sustainable Growth</span></Typography>
                         <Typography className="fs-16" data-aos="fade-up">From Stretegy to execution, we provide comprehensive consulting services tailored to your business goals.</Typography>
                     </Box>
                     <Box>
-                        <a href="#" className="text-main">View All <ArrowRightAlt /></a>
+                        <a href="/services" className="text-main">View All <ArrowRightAlt /></a>
                     </Box>
                 </Grid>
                 <Grid size={{ xs: 12, md: 'grow' }}>
                     <Grid container spacing={2}>
-                        {services2.map((service) => (
+                        {services.map((service) => (
                             <Grid
                                 data-aos="fade-up"
                                 key={service.id}

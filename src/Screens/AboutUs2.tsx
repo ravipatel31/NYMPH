@@ -4,6 +4,8 @@ import about1 from '../Assets/Images/About/about1.png'
 import { Award, BadgeCheck, Brain, BriefcaseBusiness, ChartColumnIncreasing, ChartPie, ChessKnight, Cog, Cpu, EyeDashed, Globe,  ShieldCheck, Target, Users } from "lucide-react";
 import { ArrowForward, CheckCircleOutlined } from '@mui/icons-material';
 import eart from '../Assets/Images/earth2.png'
+import whoweare from '../Assets/Images/WhoWeAre.png'
+
 
 
 function AboutUs2() {
@@ -100,14 +102,27 @@ function AboutUs2() {
         <Box>
             <Grid container sx={{height: {xs:"fit-content",md:'calc(100vh - 80px)'}}} className='position-relative g-bg pb-3 pb-md-0'>
                 <Grid size={{ xs: 12, md: 5.5 }} className='my-0 my-md-auto' sx={{ px: { xs: 2, md: 3 }, pt: 5, zIndex: 2 }}>
-                    <Typography className='text-second fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>ABOUT US</Typography>
-                    <Typography className='fw-medium fs-52 c-f mt-2' sx={{ whiteSpace: { xs: "normal", md: "nowrap" } }} data-aos="fade-up">Commited to Your Growth</Typography>
-                    <Typography className='fw-medium mb-3 fs-52 c-f' data-aos="fade-up" sx={{ whiteSpace: { xs: "auto", md: 'nowrap' } }} > Driven by <i className='text-main'>Purpose.</i></Typography>
-                    <Typography data-aos="fade-up">NYMPTH International LLP is a global consulting firm <br /> dedicated to helping businesses evolve, expand <br /> and enhance in ever changing world.</Typography>
+                    <Typography className='text-second fw-medium fs-20' data-aos="fade-up" gutterBottom sx={{ letterSpacing: "2px" }}>ABOUT NYMPH INTERNATIONAL</Typography>
+                    <Typography className='fw-medium fs-52 c-f mt-2' sx={{ whiteSpace: { xs: "normal", md: "nowrap" } }} data-aos="fade-up">Building Businesses</Typography>
+                    <Typography className='fw-medium mb-3 fs-52 c-f' data-aos="fade-up" sx={{ whiteSpace: { xs: "auto", md: 'nowrap' } }} > for a <i className='text-main'>Global Future</i></Typography>
+                    <Typography data-aos="fade-up">Nymph International LLP is a strategic advisory and business growth firm helping organizations strengthen their capabilities, improve performance, and explore opportunities beyond their local markets.</Typography>
                     <Box className='mt-3' sx={{ border: '2px solid var(--primary-color)', width: '75px' }}></Box>
                 </Grid>
                 <Grid size={{ xs: 12, md: 6.5 }} className='d-none d-md-inline-block right-side' data-aos="zoom-in">
                     <Box className='hero-section h-100 w-100'></Box>
+                </Grid>
+            </Grid>
+
+            <Grid container className='p-2 p-lg-5' spacing={1.5}>
+                <Grid size={{ xs: 12, md: 5 }}>
+                    <Typography className="text-main fw-medium fs-20 mb-2" data-aos="fade-up" gutterBottom>WHO WE ARE</Typography>
+                    <Typography className="fw-bold my-3 c-f fs-42" data-aos="fade-up">Empowering Businesses to<span className="text-main">Grow Globally</span></Typography>
+                    <Typography className="fs-16 mb-3" data-aos="fade-up">Nymph International LLP is a strategic advisory and business growth firm providing practical solutions for organizations seeking sustainable growth, operational improvement, professional development, and international expansion.</Typography>
+                    <Typography className="fs-16 mb-3" data-aos="fade-up">As the global expansion entity of Riddhi Management Consultancy, established in 2012 in Ahmedabad, Gujarat, India, Nymph International builds on more than a decade of business consulting experience to help organizations navigate growth opportunities across markets.</Typography>
+                    <Typography className="fs-16" data-aos="fade-up">Our approach combines business expertise, industry knowledge, and practical execution to help businesses move confidently from strategy to results.</Typography>
+                </Grid>
+                <Grid size={{ xs: 12, md: 7 }}>
+                    <Box component={'img'} src={whoweare} className="w-100 border-10" data-aos="zoom-in" />
                 </Grid>
             </Grid>
             <Grid container spacing={2} className='mt-3 mx-2 mx-md-4 justify-content-between border-10 bg-white' sx={{ boxShadow: '0px 0px 3px #ccc' }} >
