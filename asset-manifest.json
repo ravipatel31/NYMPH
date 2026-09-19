@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/NYMPH/static/css/main.631dc49d.css",
-    "main.js": "/NYMPH/static/js/main.fa6bb700.js",
+    "main.js": "/NYMPH/static/js/main.c2fd220f.js",
     "static/js/453.05dbc509.chunk.js": "/NYMPH/static/js/453.05dbc509.chunk.js",
     "static/media/home1.png": "/NYMPH/static/media/home1.2cb6f7ef665fa0ec1525.png",
     "static/media/contact2.png": "/NYMPH/static/media/contact2.ef5aeb5b5e9c5bc09916.png",
@@ -14,11 +14,11 @@
     "static/media/full-logo2.png": "/NYMPH/static/media/full-logo2.8d77f1dcbe1c0a2a8fb6.png",
     "index.html": "/NYMPH/index.html",
     "main.631dc49d.css.map": "/NYMPH/static/css/main.631dc49d.css.map",
-    "main.fa6bb700.js.map": "/NYMPH/static/js/main.fa6bb700.js.map",
+    "main.c2fd220f.js.map": "/NYMPH/static/js/main.c2fd220f.js.map",
     "453.05dbc509.chunk.js.map": "/NYMPH/static/js/453.05dbc509.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.631dc49d.css",
-    "static/js/main.fa6bb700.js"
+    "static/js/main.c2fd220f.js"
   ]
 }
