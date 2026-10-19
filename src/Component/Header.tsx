@@ -30,7 +30,7 @@ const menuItems = [
   // },
   {
     value: "training&workshop",
-    label: "Training & Workshop"
+    label: "WorkShops"
   }, {
     value: "contact",
     label: "Contact Us"

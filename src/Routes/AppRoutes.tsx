@@ -9,6 +9,7 @@ import AboutUs2 from '../Screens/AboutUs2'
 import ContactUs2 from '../Screens/ContactUs2'
 import Services from '../Screens/Services'
 import TrainingWorkshops from '../Screens/TrainigWorkshops'
+import EventDetails from '../Component/EventDetails'
 
 function AppRoutes() {
   return (
@@ -38,6 +39,11 @@ function AppRoutes() {
           <TrainingWorkshops />
         </Layout>
       } />
+
+      <Route path="/training&workshop/:eventId" element={
+        <Layout>
+        <EventDetails />
+        </Layout>} />
     </Routes>
   )
 }

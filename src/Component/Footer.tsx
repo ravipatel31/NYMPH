@@ -121,11 +121,11 @@ function Footer() {
                         </Box>
                         <Box className='d-flex align-items-start gap-2 mb-3'>
                             <Call className='text-white' />
-                            <Typography className='fs-14 text-white'> <a href="tel:+919023623761" className='text-white' style={{ textDecoration: 'none !important', color: "white" }}>+91 9023623761</a></Typography>
+                            <Typography className='fs-14 text-white'> <a href="tel:+919574544288" className='text-white' style={{ textDecoration: 'none !important', color: "white" }}>+91 9574544288</a></Typography>
                         </Box>
                         <Box className='d-flex align-items-start gap-2'>
                             <Email className='text-white' />
-                            <Typography className='fs-14 text-white'><a href="mailto:nymph.iinternational@gmail.com" className='text-white'>nymph.iinternational@gmail.com</a></Typography>
+                            <Typography className='fs-14 text-white'><a href="mailto:info@nymphinternational.com" className='text-white'>info@nymphinternational.com</a></Typography>
                         </Box>
                     </Grid>
                     <Grid size={12} sx={{ border: "1px solid #FFFFFF1A" }}></Grid>

@@ -15,16 +15,16 @@ export const SHOW_SAMPLE_NOTICE = true;
 
 // The three delivery formats named in the client document.
 export const trainingFormats = [
+    // {
+    //     id: 1,
+    //     title: "Corporate Training",
+    //     audience: "Companies and workforce teams",
+    //     description:
+    //         "Tailored programs designed to upskill workforce teams across diverse industry sectors.",
+    //     icon: PeopleAltOutlined,
+    // },
     {
         id: 1,
-        title: "Corporate Training",
-        audience: "Companies and workforce teams",
-        description:
-            "Tailored programs designed to upskill workforce teams across diverse industry sectors.",
-        icon: PeopleAltOutlined,
-    },
-    {
-        id: 2,
         title: "Masterclasses",
         audience: "Individuals, entrepreneurs and business leaders",
         description:
@@ -32,11 +32,12 @@ export const trainingFormats = [
         icon: TrendingUpOutlined,
     },
     {
-        id: 3,
+        id: 2,
         title: "Seminars & Workshops",
-        audience: "Colleges and universities",
+        audience: "Individuals, entrepreneurs and business leaders",
+        // audience: "Colleges and universities Individuals, entrepreneurs and business leaders",
         description:
-            "Immersive seminars and workshops that bridge the gap between academic learning and real-world application.",
+            "Immersive seminars and workshops that drive the  measurable real-world success with the help of real case-studies.",
         icon: School,
     },
 ];

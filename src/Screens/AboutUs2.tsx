@@ -1086,7 +1086,7 @@ const founders = [
     {
         name: "Suresh Raval",
         role: "CEO, NYMPH International LLP",
-        secondaryRole: "Founder, Riddhi Management Consultancy",
+        secondaryRole: "",
         image: null,
         bio: [
             "International business consultant, entrepreneur, academician and researcher in business management, with more than two decades of experience across manufacturing, services, education, hospitality management and healthcare.",
@@ -1101,7 +1101,7 @@ const founders = [
     },
     {
         name: "Shrey Raval",
-        role: "Founder and Managing Director, NYMPH International LLP",
+        role: "Managing Director, NYMPH International LLP",
         secondaryRole: "",
         image: null,
         bio: [
@@ -1127,7 +1127,7 @@ const purpose = [
     },
     {
         title: "Our Vision",
-        text: "To be a globally trusted partner for consulting and business expansion.",
+        text: "To be a globally trusted partner for consulting , training and business expansion.",
         icon: Eye,
     },
 ];
@@ -1841,7 +1841,7 @@ function AboutUs2() {
 
             {/* 9. WHO OUR PROGRAMS ARE FOR ---------------------------- */}
             <Box className="mt-5 mx-2 mx-md-4">
-                <SectionHeading eyebrow="OUR PROGRAMS">
+                <SectionHeading eyebrow="OUR TRAINING PROGRAMS">
                     Who Can Join Our Programs
                 </SectionHeading>
 

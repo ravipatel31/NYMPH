@@ -1449,6 +1449,840 @@
 //     );
 // }
 
+// import { Fragment } from "react";
+// import { Box, Button, Grid, List, ListItem, Typography } from "@mui/material";
+// import {
+//     ArrowRightAlt,
+//     BoltOutlined,
+//     BusinessCenterOutlined,
+//     CalendarMonthOutlined,
+//     CheckCircleOutlined,
+//     ComputerOutlined,
+//     FactCheckOutlined,
+//     GroupsOutlined,
+//     LocalHospitalOutlined,
+//     LocalShippingOutlined,
+//     LocationCityOutlined,
+//     PhoneInTalk,
+//     PublicOutlined,
+//     RocketLaunchOutlined,
+//     RoomServiceOutlined,
+//     SettingsOutlined,
+//     TrackChangesOutlined,
+//     TrendingUpOutlined,
+//     VerifiedUserOutlined,
+// } from "@mui/icons-material";
+// import { Link } from "react-router-dom";
+// import Counter from "../Component/Counter";
+// import {
+//     MARKETS,
+//     REGISTRATION_TEXT,
+//     YEARS_OF_EXPERIENCE,
+// } from "../Data/CompanyData";
+// import { trainingFormats } from "../Data/TrainingData";
+// import map from "../Assets/Images/map.png";
+// import whoweare from "../Assets/Images/WhoWeAre.png";
+// import iws from "../Assets/Images/industriesweserve.png";
+
+// /* ------------------------------------------------------------------ */
+// /* Content                                                             */
+// /* ------------------------------------------------------------------ */
+
+// const heroPoints = ["Strategy", "Execution", "Growth", "Global Presence"];
+
+// // Home shows the three pillars. The full service list lives on /services.
+// const services = [
+//     {
+//         id: 1,
+//         title: "Business Consulting",
+//         description:
+//             "Strategy and growth, finance, operations and supply chain, technology, HR, sales and marketing, plus mergers and acquisitions.",
+//         icon: <BusinessCenterOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 2,
+//         title: "Corporate Training",
+//         description:
+//             "Tailored programs for workforce teams, hands-on masterclasses for entrepreneurs and leaders, and seminars and workshops for colleges and universities.",
+//         icon: <GroupsOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 3,
+//         title: "Global Expansion",
+//         description:
+//             "Business development and market-entry support across the USA, Canada, Europe, the UK, the Gulf, Australia, and New Zealand.",
+//         icon: <PublicOutlined className="text-white fs-32" />,
+//     },
+// ];
+
+// const whyPoints = [
+//     {
+//         id: 1,
+//         title: "Global perspective, local insight",
+//         description:
+//             "International market knowledge grounded in a practical understanding of how business gets done locally.",
+//         icon: <PublicOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 2,
+//         title: "Built around your goals",
+//         description:
+//             "Every engagement is planned around your objectives and constraints, not a fixed template.",
+//         icon: <TrackChangesOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 3,
+//         title: "Strategy through to delivery",
+//         description:
+//             "We stay involved from planning to practical implementation, so plans turn into results.",
+//         icon: <RocketLaunchOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 4,
+//         title: "Registered and established",
+//         description:
+//             "Registered with the Ministry of Corporate Affairs, Government of India, and backed by Riddhi Management Consultancy since 2012.",
+//         icon: <VerifiedUserOutlined className="text-white fs-32" />,
+//     },
+// ];
+
+// const processSteps = [
+//     {
+//         no: "01",
+//         icon: <CalendarMonthOutlined className="fs-36 text-main" />,
+//         title: "Understand",
+//         description:
+//             "We begin by understanding your business, objectives, challenges, market position, and growth ambitions.",
+//     },
+//     {
+//         no: "02",
+//         icon: <FactCheckOutlined className="fs-36 text-main" />,
+//         title: "Assess",
+//         description:
+//             "We evaluate your business environment, opportunities, operations, and market requirements to identify areas for improvement and growth.",
+//     },
+//     {
+//         no: "03",
+//         icon: <TrackChangesOutlined className="fs-36 text-main" />,
+//         title: "Plan",
+//         description:
+//             "We develop practical strategies tailored to your business objectives, whether you are seeking growth, transformation, or international expansion.",
+//     },
+//     {
+//         no: "04",
+//         icon: <RocketLaunchOutlined className="fs-36 text-main" />,
+//         title: "Implement",
+//         description:
+//             "We support the transition from strategy to practical execution through focused advisory, training, and implementation guidance.",
+//     },
+//     {
+//         no: "05",
+//         icon: <TrendingUpOutlined className="fs-36 text-main" />,
+//         title: "Scale",
+//         description:
+//             "We focus on sustainable growth, continuous improvement, and opportunities for long-term business development.",
+//     },
+// ];
+
+// // The 7 sectors from the client document.
+// const industries = [
+//     {
+//         id: 1,
+//         title: "Information Technology",
+//         icon: <ComputerOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 2,
+//         title: "Healthcare & Biotech",
+//         icon: <LocalHospitalOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 3,
+//         title: "Hospitality Management",
+//         icon: <RoomServiceOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 4,
+//         title: "Energy & Utilities",
+//         icon: <BoltOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 5,
+//         title: "Industrial & Heavy Machinery",
+//         icon: <SettingsOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 6,
+//         title: "Logistics & Supply Chain",
+//         icon: <LocalShippingOutlined className="text-white fs-32" />,
+//     },
+//     {
+//         id: 7,
+//         title: "Real Estate & Infrastructure",
+//         icon: <LocationCityOutlined className="text-white fs-32" />,
+//     },
+// ];
+
+// // Only numbers the client's document supports (all computed from real data).
+// const reachStats = [
+//     {
+//         key: "experience",
+//         end: YEARS_OF_EXPERIENCE,
+//         suffix: "+",
+//         label: "Years of Experience",
+//     },
+//     { key: "markets", end: MARKETS.length, suffix: "", label: "Key Markets" },
+//     {
+//         key: "sectors",
+//         end: industries.length,
+//         suffix: "",
+//         label: "Industry Sectors",
+//     },
+// ];
+
+// // The client document has a "Reviews" heading but no reviews yet.
+// // Add real ones below and the section appears automatically:
+// //   { quote: "…", name: "Full Name", role: "Title, Company" }
+// /** @type {{ quote: string, name: string, role: string }[]} */
+// type Testimonial = { quote: string; name: string; role: string };
+// const testimonials: Testimonial[] = [
+//     {
+//         quote: "NYMPH International helped us turn our expansion plans into a clear, practical roadmap we could act on.",
+//         name: "Sample Client 1",
+//         role: "Founder, IT services company",
+//     },
+//     {
+//         quote: "The training was hands-on and case-study driven. Our team came away with skills we use every day.",
+//         name: "Sample Client 2",
+//         role: "Operations Head, healthcare organization",
+//     },
+//     {
+//         quote: "The workshop connected what our students study with how business actually works.",
+//         name: "Sample Client 3",
+//         role: "Faculty Member, university",
+//     },
+// ];
+
+// // Shared card style
+// const cardSx = {
+//     border: "1px solid #F1F1F1",
+//     transition: "all .3s ease",
+//     "&:hover": {
+//         transform: "translateY(-6px)",
+//         boxShadow: "0 10px 30px var(--primary-light-color)",
+//     },
+// };
+
+// /* ------------------------------------------------------------------ */
+// /* Page                                                                */
+// /* ------------------------------------------------------------------ */
+
+// export default function Home2() {
+//     return (
+//         <Box>
+//             {/* 1. HERO ------------------------------------------------ */}
+//             <Grid
+//                 container
+//                 sx={{ height: { xs: "fit-content", md: "calc(100vh - 80px)" } }}
+//                 className="position-relative g-bg pb-3 pb-md-0"
+//             >
+//                 <Grid
+//                     size={{ xs: 12, md: 5.5 }}
+//                     className="my-0 my-md-auto"
+//                     sx={{ px: { xs: 2, md: 3 }, pt: 5, zIndex: 2 }}
+//                 >
+//                     <Typography
+//                         className="text-second fw-medium fs-20"
+//                         data-aos="fade-up"
+//                         gutterBottom
+//                         sx={{ letterSpacing: "2px" }}
+//                     >
+//                         GLOBAL THINKING LOCAL EXPERTISE
+//                     </Typography>
+
+//                     <Typography
+//                         component="h1"
+//                         className="fw-medium fs-58 c-f mt-2 mb-3"
+//                         data-aos="fade-up"
+//                         sx={{ whiteSpace: { xs: "normal", md: "nowrap" } }}
+//                     >
+//                         Empowering Businesses
+//                         <br />
+//                         to{" "}
+//                         <span className="text-main" style={{ fontStyle: "italic" }}>
+//                             Grow Globally
+//                         </span>
+//                     </Typography>
+
+//                     <Typography data-aos="fade-up">
+//                         Practical consulting, professional development, and international
+//                         expansion solutions designed to help businesses turn opportunities
+//                         into sustainable growth.
+//                     </Typography>
+
+//                     <List
+//                         className="d-flex flex-column flex-md-row gap-3 gap-md-0 p-0 m-0 mt-3"
+//                         data-aos="fade-up"
+//                     >
+//                         {heroPoints.map((point) => (
+//                             <ListItem key={point} className="gap-2 m-0 p-0">
+//                                 <CheckCircleOutlined className="text-main" /> {point}
+//                             </ListItem>
+//                         ))}
+//                     </List>
+
+//                     <Box className="d-flex flex-column flex-md-row gap-1 gap-md-3">
+//                         <Button
+//                             component={Link}
+//                             to="/services"
+//                             className="btn-main text-white px-4 py-2 mt-4"
+//                             data-aos="fade-up"
+//                         >
+//                             Explore Our Services
+//                         </Button>
+//                         <Button
+//                             component={Link}
+//                             to="/contact"
+//                             variant="outlined"
+//                             className="btn-outlined-main text-main px-4 py-2 mt-4"
+//                             data-aos="fade-up"
+//                         >
+//                             <PhoneInTalk />
+//                             &nbsp; Talk to Us
+//                         </Button>
+//                     </Box>
+//                 </Grid>
+
+//                 <Grid
+//                     size={{ xs: 12, md: 6.5 }}
+//                     className="d-none d-md-inline-block right-side"
+//                     data-aos="zoom-in"
+//                 >
+//                     <Box className="hero-section h-100 w-100" aria-hidden="true"></Box>
+//                 </Grid>
+//             </Grid>
+
+//             {/* 2. WHO WE ARE (short teaser; full story is on /about) --- */}
+//             <Grid container className="p-2 p-lg-5" spacing={1.5}>
+//                 <Grid size={{ xs: 12, md: 5 }}>
+//                     <Typography
+//                         className="text-main fw-medium fs-20 mb-2"
+//                         data-aos="fade-up"
+//                         gutterBottom
+//                     >
+//                         WHO WE ARE
+//                     </Typography>
+//                     <Typography
+//                         component="h2"
+//                         className="fw-bold my-3 c-f fs-42"
+//                         data-aos="fade-up"
+//                     >
+//                         Your Partner for <span className="text-main">Business Growth</span>
+//                     </Typography>
+//                     <Typography className="fs-16 mb-3" data-aos="fade-up">
+//                         NYMPH International helps organizations strengthen their operations,
+//                         develop their people, embrace transformation, and explore
+//                         international opportunities through practical, outcome-focused
+//                         solutions.
+//                     </Typography>
+
+//                     <Box className="d-flex flex-column gap-2 mb-3" data-aos="fade-up">
+//                         <Typography className="fs-14 d-flex align-items-start gap-2">
+//                             <VerifiedUserOutlined
+//                                 className="text-main"
+//                                 fontSize="small"
+//                             />
+//                             {REGISTRATION_TEXT}
+//                         </Typography>
+//                         <Typography className="fs-14 d-flex align-items-start gap-2">
+//                             <GroupsOutlined className="text-main" fontSize="small" />
+//                             Founded by Suresh Raval and Shrey Raval, the global expansion
+//                             entity of Riddhi Management Consultancy.
+//                         </Typography>
+//                     </Box>
+
+//                     <Link to="/about" className="text-main">
+//                         Meet the founders <ArrowRightAlt />
+//                     </Link>
+//                 </Grid>
+//                 <Grid size={{ xs: 12, md: 7 }}>
+//                     <Box
+//                         component="img"
+//                         src={whoweare}
+//                         alt="Who we are at NYMPH International"
+//                         className="w-100 border-10"
+//                         data-aos="zoom-in"
+//                     />
+//                 </Grid>
+//             </Grid>
+
+//             {/* 3. WHAT WE DO ------------------------------------------ */}
+//             <Grid container spacing={2} className="p-4 bg">
+//                 <Grid
+//                     size={{ xs: 12, md: 5 }}
+//                     className="d-flex flex-column justify-content-center align-items-start"
+//                     sx={{ gap: "30px" }}
+//                 >
+//                     <Box>
+//                         <Typography
+//                             className="fs-20 fw-medium text-second"
+//                             data-aos="fade-up"
+//                             gutterBottom
+//                         >
+//                             WHAT WE DO
+//                         </Typography>
+//                         <Typography
+//                             component="h2"
+//                             className="fw-bold my-3 c-f fs-42"
+//                             data-aos="fade-up"
+//                         >
+//                             End-to-End Solutions <br /> for{" "}
+//                             <span className="text-main">Sustainable Growth</span>
+//                         </Typography>
+//                         <Typography className="fs-16" data-aos="fade-up">
+//                             From strategy to execution, we provide comprehensive consulting
+//                             services tailored to your business goals.
+//                         </Typography>
+//                     </Box>
+//                     <Box>
+//                         <Link to="/services" className="text-main">
+//                             View All <ArrowRightAlt />
+//                         </Link>
+//                     </Box>
+//                 </Grid>
+
+//                 <Grid size={{ xs: 12, md: "grow" }}>
+//                     <Grid container spacing={2}>
+//                         {services.map((service) => (
+//                             <Grid
+//                                 data-aos="fade-up"
+//                                 key={service.id}
+//                                 size={{ xs: 12, sm: 6, md: 4 }}
+//                             >
+//                                 <Box className="p-3 bg-white border-10 h-100" sx={cardSx}>
+//                                     <Box className="p-2 border-50 bg-purple d-inline-flex">
+//                                         {service.icon}
+//                                     </Box>
+//                                     <Typography
+//                                         variant="h5"
+//                                         component="h3"
+//                                         className="fw-bold my-3 c-f"
+//                                         sx={{ lineHeight: 1.2 }}
+//                                     >
+//                                         {service.title}
+//                                     </Typography>
+//                                     <Typography
+//                                         variant="body2"
+//                                         color="text.secondary"
+//                                         sx={{ lineHeight: 1.8 }}
+//                                     >
+//                                         {service.description}
+//                                     </Typography>
+//                                 </Box>
+//                             </Grid>
+//                         ))}
+//                     </Grid>
+//                 </Grid>
+//             </Grid>
+
+//             {/* 4. WHY NYMPH ------------------------------------------- */}
+//             <Grid container className="p-2 p-lg-5" spacing={3}>
+//                 <Grid size={{ xs: 12, md: 5 }}>
+//                     <Typography
+//                         className="text-main fw-medium fs-20"
+//                         data-aos="fade-up"
+//                         gutterBottom
+//                     >
+//                         WHY NYMPH INTERNATIONAL?
+//                     </Typography>
+//                     <Typography
+//                         component="h2"
+//                         className="fw-bold my-3 c-f fs-42"
+//                         data-aos="fade-up"
+//                     >
+//                         From Strategy to
+//                         <br />
+//                         <span className="text-main">Practical Execution</span>
+//                     </Typography>
+//                     <Typography className="fs-16 mb-3" data-aos="fade-up">
+//                         Backed by more than a decade of hands-on expertise, NYMPH
+//                         International LLP bridges the gap between strategic advisory and
+//                         real-world execution.
+//                     </Typography>
+//                     <Typography className="fs-16" data-aos="fade-up">
+//                         Whether you are transforming business operations, expanding into
+//                         international markets, or developing corporate leadership
+//                         capabilities, our approach focuses on practical solutions designed
+//                         around your goals.
+//                     </Typography>
+//                 </Grid>
+
+//                 <Grid size={{ xs: 12, md: 7 }}>
+//                     <Grid container spacing={2}>
+//                         {whyPoints.map((point) => (
+//                             <Grid
+//                                 data-aos="fade-up"
+//                                 key={point.id}
+//                                 size={{ xs: 12, sm: 6 }}
+//                             >
+//                                 <Box className="p-3 bg-white border-10 h-100" sx={cardSx}>
+//                                     <Box className="p-2 border-50 bg-purple d-inline-flex">
+//                                         {point.icon}
+//                                     </Box>
+//                                     <Typography
+//                                         variant="h6"
+//                                         component="h3"
+//                                         className="fw-bold my-2 c-f"
+//                                         sx={{ lineHeight: 1.2 }}
+//                                     >
+//                                         {point.title}
+//                                     </Typography>
+//                                     <Typography
+//                                         variant="body2"
+//                                         color="text.secondary"
+//                                         sx={{ lineHeight: 1.8 }}
+//                                     >
+//                                         {point.description}
+//                                     </Typography>
+//                                 </Box>
+//                             </Grid>
+//                         ))}
+//                     </Grid>
+//                 </Grid>
+//             </Grid>
+
+//             {/* 5. OUR APPROACH ---------------------------------------- */}
+//             <Grid container className="py-5 px-3 justify-content-center bg">
+//                 <Grid size={12}>
+//                     <Typography
+//                         className="fs-20 text-main fw-medium text-center"
+//                         data-aos="fade-up"
+//                     >
+//                         OUR APPROACH
+//                     </Typography>
+//                     <Typography
+//                         variant="h3"
+//                         component="h2"
+//                         className="fw-medium text-center mb-5 c-f"
+//                         data-aos="fade-up"
+//                     >
+//                         From Business Challenges to Sustainable Growth
+//                     </Typography>
+//                 </Grid>
+
+//                 <Grid
+//                     container
+//                     className="w-100 position-relative justify-content-between"
+//                 >
+//                     <Box
+//                         aria-hidden="true"
+//                         sx={{
+//                             position: "absolute",
+//                             display: { xs: "none", md: "inline-block" },
+//                             top: 30,
+//                             left: "8%",
+//                             right: "8%",
+//                             height: "2px",
+//                             bgcolor: "var(--primary-light-color)",
+//                             zIndex: 0,
+//                         }}
+//                     />
+
+//                     {processSteps.map((step) => (
+//                         <Grid
+//                             key={step.no}
+//                             size={{ xs: 6, sm: 6, md: 2.2 }}
+//                             className="text-center position-relative mb-5 mb-md-0"
+//                             sx={{ zIndex: 1 }}
+//                         >
+//                             <Box
+//                                 className="p-2 border-light-purple bg-white border-50 d-inline-block"
+//                                 data-aos="zoom-in"
+//                             >
+//                                 {step.icon}
+//                             </Box>
+//                             <Typography
+//                                 className="text-main fw-bold"
+//                                 sx={{ my: 0.5 }}
+//                                 data-aos="fade-up"
+//                             >
+//                                 {step.no}
+//                             </Typography>
+//                             <Typography
+//                                 variant="h6"
+//                                 component="h3"
+//                                 className="fw-semibold mb-2"
+//                                 data-aos="fade-up"
+//                             >
+//                                 {step.title}
+//                             </Typography>
+//                             <Typography
+//                                 variant="body2"
+//                                 color="text.secondary"
+//                                 data-aos="fade-up"
+//                                 sx={{ maxWidth: 180, mx: "auto", lineHeight: 1.7 }}
+//                             >
+//                                 {step.description}
+//                             </Typography>
+//                         </Grid>
+//                     ))}
+//                 </Grid>
+//             </Grid>
+
+//             {/* 5b. TRAINING & WORKSHOPS overview ---------------------- */}
+//             <Grid container className="p-2 p-lg-5" spacing={3}>
+//                 <Grid size={{ xs: 12, md: 5 }}>
+//                     <Typography
+//                         className="text-main fw-medium fs-20"
+//                         data-aos="fade-up"
+//                         gutterBottom
+//                     >
+//                         TRAINING & WORKSHOPS
+//                     </Typography>
+//                     <Typography
+//                         component="h2"
+//                         className="fw-bold my-3 c-f fs-42"
+//                         data-aos="fade-up"
+//                     >
+//                         Practical Learning for{" "}
+//                         <span className="text-main">Teams, Leaders and Campuses</span>
+//                     </Typography>
+//                     <Typography className="fs-16 mb-3" data-aos="fade-up">
+//                         Tailored training, hands-on masterclasses and immersive seminars,
+//                         built around real case studies and measurable outcomes.
+//                     </Typography>
+//                     <Button
+//                         component={Link}
+//                         to="/training&workshops"
+//                         className="btn-main text-white px-4 py-2"
+//                         data-aos="fade-up"
+//                     >
+//                         Explore Programs
+//                     </Button>
+//                 </Grid>
+
+//                 <Grid size={{ xs: 12, md: 7 }}>
+//                     <Grid container spacing={2}>
+//                         {trainingFormats.map((format) => {
+//                             const Icon = format.icon;
+//                             return (
+//                                 <Grid
+//                                     data-aos="fade-up"
+//                                     key={format.id}
+//                                     size={{ xs: 12, sm: 4 }}
+//                                 >
+//                                     <Box className="p-3 bg-white border-10 h-100" sx={cardSx}>
+//                                         <Box className="p-2 border-50 bg-purple d-inline-flex">
+//                                             <Icon className="text-white fs-32" />
+//                                         </Box>
+//                                         <Typography
+//                                             variant="h6"
+//                                             component="h3"
+//                                             className="fw-bold my-2 c-f"
+//                                             sx={{ lineHeight: 1.2 }}
+//                                         >
+//                                             {format.title}
+//                                         </Typography>
+//                                         <Typography
+//                                             variant="body2"
+//                                             color="text.secondary"
+//                                             sx={{ lineHeight: 1.8 }}
+//                                         >
+//                                             {format.description}
+//                                         </Typography>
+//                                     </Box>
+//                                 </Grid>
+//                             );
+//                         })}
+//                     </Grid>
+//                 </Grid>
+//             </Grid>
+
+//             {/* 6. GLOBAL REACH (verified stats + markets) ------------- */}
+//             <Grid container className="p-2 p-md-4 my-3 bg-dark-purple">
+//                 <Grid size={{ xs: 12, md: 5 }} className="p-3 p-md-4">
+//                     <Typography className="text-white fs-20 fw-medium" data-aos="fade-up">
+//                         OUR GLOBAL REACH
+//                     </Typography>
+//                     <Typography
+//                         variant="h3"
+//                         component="h2"
+//                         className="text-white my-3 c-f"
+//                         data-aos="fade-up"
+//                     >
+//                         Helping Businesses Grow Across Borders
+//                     </Typography>
+//                     <hr className="border" data-aos="zoom-in" style={{ width: "70px" }} />
+
+//                     <Grid container spacing={3} className="align-items-center">
+//                         {reachStats.map((stat, index) => (
+//                             <Fragment key={stat.key}>
+//                                 {index > 0 && (
+//                                     <Grid>
+//                                         <hr
+//                                             className="border"
+//                                             data-aos="zoom-in"
+//                                             style={{ height: "70px" }}
+//                                         />
+//                                     </Grid>
+//                                 )}
+//                                 <Grid size="auto">
+//                                     <Counter
+//                                         end={stat.end}
+//                                         suffix={stat.suffix}
+//                                         className="text-white fw-medium text-center"
+//                                     />
+//                                     <Typography
+//                                         className="text-white text-center"
+//                                         variant="body2"
+//                                         data-aos="fade-up"
+//                                         // sx={{ maxWidth: 100 }}
+//                                     >
+//                                         {stat.label}
+//                                     </Typography>
+//                                 </Grid>
+//                             </Fragment>
+//                         ))}
+//                     </Grid>
+
+//                     <Typography
+//                         className="text-white mt-4 mb-2"
+//                         variant="body2"
+//                         data-aos="fade-up"
+//                     >
+//                         Markets we support
+//                     </Typography>
+//                     <Box className="d-flex flex-wrap gap-2" data-aos="fade-up">
+//                         {MARKETS.map((market) => (
+//                             <Box
+//                                 key={market}
+//                                 className="border border-light text-white px-3 py-1 fs-14"
+//                                 sx={{ borderRadius: "999px" }}
+//                             >
+//                                 {market}
+//                             </Box>
+//                         ))}
+//                     </Box>
+//                 </Grid>
+
+//                 <Grid
+//                     size={{ xs: 12, md: 7 }}
+//                     className="d-flex align-items-center overflow-hidden"
+//                 >
+//                     <Box
+//                         component="img"
+//                         src={map}
+//                         alt="World map showing the regions NYMPH International serves"
+//                         data-aos="zoom-in"
+//                         width="100%"
+//                         sx={{ height: { xs: "250px", md: "350px" }, objectFit: "contain" }}
+//                     />
+//                 </Grid>
+//             </Grid>
+
+//             {/* 7. INDUSTRIES WE SERVE --------------------------------- */}
+//             <Grid container spacing={2} className="p-4 bg-light-purple">
+//                 <Grid
+//                     size={{ xs: 12, md: 5 }}
+//                     className="d-flex flex-column justify-content-center align-items-start"
+//                 >
+//                     <Box>
+//                         <Typography
+//                             className="fs-20 fw-medium text-main"
+//                             data-aos="fade-up"
+//                             gutterBottom
+//                         >
+//                             INDUSTRIES WE SERVE
+//                         </Typography>
+//                         <Typography
+//                             component="h2"
+//                             className="fw-bold my-3 c-f fs-42"
+//                             data-aos="fade-up"
+//                         >
+//                             Industry Expertise Across{" "}
+//                             <span className="text-main">Diverse Sectors</span>
+//                         </Typography>
+//                     </Box>
+//                     <Box
+//                         component="img"
+//                         src={iws}
+//                         alt="Industries served by NYMPH International"
+//                         className="w-100 flex-1"
+//                     />
+//                 </Grid>
+
+//                 <Grid size={{ xs: 12, md: "grow" }}>
+//                     <Grid container spacing={2}>
+//                         {industries.map((industry) => (
+//                             <Grid
+//                                 data-aos="fade-up"
+//                                 key={industry.id}
+//                                 size={{ xs: 12, sm: 6, md: 4 }}
+//                             >
+//                                 <Box className="p-3 bg-white border-10 h-100" sx={cardSx}>
+//                                     <Box className="p-2 border-50 bg-purple d-inline-flex">
+//                                         {industry.icon}
+//                                     </Box>
+//                                     <Typography
+//                                         variant="h6"
+//                                         component="h3"
+//                                         className="fw-bold my-3 c-f"
+//                                         sx={{ lineHeight: 1.2 }}
+//                                     >
+//                                         {industry.title}
+//                                     </Typography>
+//                                 </Box>
+//                             </Grid>
+//                         ))}
+//                     </Grid>
+//                 </Grid>
+//             </Grid>
+
+//             {/* 8. CLIENT REVIEWS (hidden until real reviews are added) - */}
+//             {testimonials.length > 0 && (
+//                 <Box className="py-5 px-3 px-md-4">
+//                     <Typography
+//                         className="fs-20 text-main fw-medium text-center"
+//                         data-aos="fade-up"
+//                     >
+//                         CLIENT REVIEWS
+//                     </Typography>
+//                     <Typography
+//                         variant="h3"
+//                         component="h2"
+//                         className="fw-medium text-center mb-4 c-f"
+//                         data-aos="fade-up"
+//                     >
+//                         What Our Clients Say
+//                     </Typography>
+//                     <Grid container spacing={2}>
+//                         {testimonials.map((item:any) => (
+//                             <Grid
+//                                 data-aos="fade-up"
+//                                 key={item.name}
+//                                 size={{ xs: 12, md: 4 }}
+//                             >
+//                                 <Box className="p-4 bg-white border-10 h-100" sx={cardSx}>
+//                                     <Typography className="fs-16 mb-3">
+//                                         “{item.quote}”
+//                                     </Typography>
+//                                     <Typography className="fw-bold c-f">
+//                                         {item.name}
+//                                     </Typography>
+//                                     <Typography variant="body2" color="text.secondary">
+//                                         {item.role}
+//                                     </Typography>
+//                                 </Box>
+//                             </Grid>
+//                         ))}
+//                     </Grid>
+//                 </Box>
+//             )}
+
+//         </Box>
+//     );
+// }
+
 import { Fragment } from "react";
 import { Box, Button, Grid, List, ListItem, Typography } from "@mui/material";
 import {
@@ -1480,16 +2314,23 @@ import {
     YEARS_OF_EXPERIENCE,
 } from "../Data/CompanyData";
 import { trainingFormats } from "../Data/TrainingData";
+import EventCard from "../Component/EventCard";
+import {
+    EVENTS_LIST_SEMINARS_PATH,
+    getEventDateParts,
+    getUpcomingEvents,
+    joinList,
+} from "../Data/EventData";
 import map from "../Assets/Images/map.png";
 import whoweare from "../Assets/Images/WhoWeAre.png";
 import iws from "../Assets/Images/industriesweserve.png";
-
+ 
 /* ------------------------------------------------------------------ */
 /* Content                                                             */
 /* ------------------------------------------------------------------ */
-
+ 
 const heroPoints = ["Strategy", "Execution", "Growth", "Global Presence"];
-
+ 
 // Home shows the three pillars. The full service list lives on /services.
 const services = [
     {
@@ -1499,13 +2340,13 @@ const services = [
             "Strategy and growth, finance, operations and supply chain, technology, HR, sales and marketing, plus mergers and acquisitions.",
         icon: <BusinessCenterOutlined className="text-white fs-32" />,
     },
-    {
-        id: 2,
-        title: "Corporate Training",
-        description:
-            "Tailored programs for workforce teams, hands-on masterclasses for entrepreneurs and leaders, and seminars and workshops for colleges and universities.",
-        icon: <GroupsOutlined className="text-white fs-32" />,
-    },
+    // {
+    //     id: 2,
+    //     title: "Corporate Training",
+    //     description:
+    //         "Tailored programs for workforce teams, hands-on masterclasses for entrepreneurs and leaders, and seminars and workshops for colleges and universities.",
+    //     icon: <GroupsOutlined className="text-white fs-32" />,
+    // },
     {
         id: 3,
         title: "Global Expansion",
@@ -1514,7 +2355,7 @@ const services = [
         icon: <PublicOutlined className="text-white fs-32" />,
     },
 ];
-
+ 
 const whyPoints = [
     {
         id: 1,
@@ -1545,7 +2386,7 @@ const whyPoints = [
         icon: <VerifiedUserOutlined className="text-white fs-32" />,
     },
 ];
-
+ 
 const processSteps = [
     {
         no: "01",
@@ -1583,7 +2424,7 @@ const processSteps = [
             "We focus on sustainable growth, continuous improvement, and opportunities for long-term business development.",
     },
 ];
-
+ 
 // The 7 sectors from the client document.
 const industries = [
     {
@@ -1622,7 +2463,7 @@ const industries = [
         icon: <LocationCityOutlined className="text-white fs-32" />,
     },
 ];
-
+ 
 // Only numbers the client's document supports (all computed from real data).
 const reachStats = [
     {
@@ -1639,7 +2480,7 @@ const reachStats = [
         label: "Industry Sectors",
     },
 ];
-
+ 
 // The client document has a "Reviews" heading but no reviews yet.
 // Add real ones below and the section appears automatically:
 //   { quote: "…", name: "Full Name", role: "Title, Company" }
@@ -1662,7 +2503,7 @@ const testimonials: Testimonial[] = [
         role: "Faculty Member, university",
     },
 ];
-
+ 
 // Shared card style
 const cardSx = {
     border: "1px solid #F1F1F1",
@@ -1672,12 +2513,17 @@ const cardSx = {
         boxShadow: "0 10px 30px var(--primary-light-color)",
     },
 };
-
+ 
 /* ------------------------------------------------------------------ */
 /* Page                                                                */
 /* ------------------------------------------------------------------ */
-
+ 
 export default function Home2() {
+    // Seminars that haven't finished yet, soonest first. Past ones drop off automatically.
+    const upcomingEvents = getUpcomingEvents();
+    const nextEvent = upcomingEvents[0];
+    const eventCountries = Array.from(new Set(upcomingEvents.map((e:any) => e.country)));
+ 
     return (
         <Box>
             {/* 1. HERO ------------------------------------------------ */}
@@ -1691,6 +2537,22 @@ export default function Home2() {
                     className="my-0 my-md-auto"
                     sx={{ px: { xs: 2, md: 3 }, pt: 5, zIndex: 2 }}
                 >
+                    {nextEvent && (
+                        <Box
+                            component={Link}
+                            to={EVENTS_LIST_SEMINARS_PATH}
+                            className="d-inline-flex align-items-center gap-2 bg-light-purple px-3 py-1 mb-3 fs-14 text-decoration-none"
+                            sx={{ borderRadius: "999px", color: "inherit" }}
+                            data-aos="fade-up"
+                        >
+                            <span className="text-main fw-bold">NEW</span>
+                            <span>
+                                Next seminar: {nextEvent.city},{" "}
+                                {getEventDateParts(nextEvent).range}
+                            </span>
+                            <ArrowRightAlt className="text-main" fontSize="small" />
+                        </Box>
+                    )}
                     <Typography
                         className="text-second fw-medium fs-20"
                         data-aos="fade-up"
@@ -1699,7 +2561,7 @@ export default function Home2() {
                     >
                         GLOBAL THINKING LOCAL EXPERTISE
                     </Typography>
-
+ 
                     <Typography
                         component="h1"
                         className="fw-medium fs-58 c-f mt-2 mb-3"
@@ -1713,13 +2575,13 @@ export default function Home2() {
                             Grow Globally
                         </span>
                     </Typography>
-
+ 
                     <Typography data-aos="fade-up">
                         Practical consulting, professional development, and international
                         expansion solutions designed to help businesses turn opportunities
                         into sustainable growth.
                     </Typography>
-
+ 
                     <List
                         className="d-flex flex-column flex-md-row gap-3 gap-md-0 p-0 m-0 mt-3"
                         data-aos="fade-up"
@@ -1730,7 +2592,7 @@ export default function Home2() {
                             </ListItem>
                         ))}
                     </List>
-
+ 
                     <Box className="d-flex flex-column flex-md-row gap-1 gap-md-3">
                         <Button
                             component={Link}
@@ -1752,7 +2614,7 @@ export default function Home2() {
                         </Button>
                     </Box>
                 </Grid>
-
+ 
                 <Grid
                     size={{ xs: 12, md: 6.5 }}
                     className="d-none d-md-inline-block right-side"
@@ -1761,7 +2623,77 @@ export default function Home2() {
                     <Box className="hero-section h-100 w-100" aria-hidden="true"></Box>
                 </Grid>
             </Grid>
-
+ 
+            {/* 1b. UPCOMING SEMINARS (featured: Training & Workshops) --- */}
+            <Grid
+                container
+                spacing={3}
+                className="p-3 p-lg-5 bg-dark-purple"
+                id="upcoming-seminars"
+            >
+                <Grid
+                    size={{ xs: 12, md: 4 }}
+                    className="d-flex flex-column justify-content-center align-items-start"
+                    sx={{ "& .MuiTypography-root": { color: "#fff !important" } }}
+                >
+                    <Typography className="text-white fs-20 fw-medium" data-aos="fade-up">
+                        UPCOMING SEMINARS
+                    </Typography>
+                    <Typography
+                        component="h2"
+                        className="text-white fw-bold my-3 fs-42"
+                        data-aos="fade-up"
+                        sx={{ lineHeight: 1.15 }}
+                    >
+                        Learn From Real Cases, In Person
+                    </Typography>
+                    <Typography className="text-white fs-16 mb-4" data-aos="fade-up">
+                        One and two-day business seminars
+                        {eventCountries.length > 0 && <> across {joinList(eventCountries)}</>},
+                        built on real case studies and practical frameworks, with
+                        post-seminar consultation included.
+                    </Typography>
+                    <Box className="d-flex flex-column flex-sm-row gap-2" data-aos="fade-up">
+                        <Button
+                            component={Link}
+                            to={EVENTS_LIST_SEMINARS_PATH}
+                            className="btn-main text-white px-4 py-2"
+                        >
+                            Explore All Seminars
+                        </Button>
+                    </Box>
+                </Grid>
+ 
+                <Grid size={{ xs: 12, md: 8 }} className="d-flex align-items-center">
+                    {upcomingEvents.length > 0 ? (
+                        <Box className="d-flex flex-column gap-2 w-100">
+                            {upcomingEvents.slice(0, 4).map((event:any) => (
+                                <EventCard
+                                    key={event.id}
+                                    event={event}
+                                    variant="compact"
+                                    isNext={event.id === nextEvent?.id}
+                                />
+                            ))}
+                            {upcomingEvents.length > 4 && (
+                                <Link
+                                    to={EVENTS_LIST_SEMINARS_PATH}
+                                    className="text-white mt-1"
+                                >
+                                    + {upcomingEvents.length - 4} more upcoming{" "}
+                                    {upcomingEvents.length - 4 === 1 ? "seminar" : "seminars"}{" "}
+                                    <ArrowRightAlt />
+                                </Link>
+                            )}
+                        </Box>
+                    ) : (
+                        <Typography className="text-white">
+                            New seminar dates will be announced soon.
+                        </Typography>
+                    )}
+                </Grid>
+            </Grid>
+ 
             {/* 2. WHO WE ARE (short teaser; full story is on /about) --- */}
             <Grid container className="p-2 p-lg-5" spacing={1.5}>
                 <Grid size={{ xs: 12, md: 5 }}>
@@ -1785,7 +2717,7 @@ export default function Home2() {
                         international opportunities through practical, outcome-focused
                         solutions.
                     </Typography>
-
+ 
                     <Box className="d-flex flex-column gap-2 mb-3" data-aos="fade-up">
                         <Typography className="fs-14 d-flex align-items-start gap-2">
                             <VerifiedUserOutlined
@@ -1800,7 +2732,7 @@ export default function Home2() {
                             entity of Riddhi Management Consultancy.
                         </Typography>
                     </Box>
-
+ 
                     <Link to="/about" className="text-main">
                         Meet the founders <ArrowRightAlt />
                     </Link>
@@ -1815,7 +2747,7 @@ export default function Home2() {
                     />
                 </Grid>
             </Grid>
-
+ 
             {/* 3. WHAT WE DO ------------------------------------------ */}
             <Grid container spacing={2} className="p-4 bg">
                 <Grid
@@ -1850,7 +2782,7 @@ export default function Home2() {
                         </Link>
                     </Box>
                 </Grid>
-
+ 
                 <Grid size={{ xs: 12, md: "grow" }}>
                     <Grid container spacing={2}>
                         {services.map((service) => (
@@ -1884,7 +2816,7 @@ export default function Home2() {
                     </Grid>
                 </Grid>
             </Grid>
-
+ 
             {/* 4. WHY NYMPH ------------------------------------------- */}
             <Grid container className="p-2 p-lg-5" spacing={3}>
                 <Grid size={{ xs: 12, md: 5 }}>
@@ -1916,7 +2848,7 @@ export default function Home2() {
                         around your goals.
                     </Typography>
                 </Grid>
-
+ 
                 <Grid size={{ xs: 12, md: 7 }}>
                     <Grid container spacing={2}>
                         {whyPoints.map((point) => (
@@ -1950,7 +2882,7 @@ export default function Home2() {
                     </Grid>
                 </Grid>
             </Grid>
-
+ 
             {/* 5. OUR APPROACH ---------------------------------------- */}
             <Grid container className="py-5 px-3 justify-content-center bg">
                 <Grid size={12}>
@@ -1969,7 +2901,7 @@ export default function Home2() {
                         From Business Challenges to Sustainable Growth
                     </Typography>
                 </Grid>
-
+ 
                 <Grid
                     container
                     className="w-100 position-relative justify-content-between"
@@ -1987,7 +2919,7 @@ export default function Home2() {
                             zIndex: 0,
                         }}
                     />
-
+ 
                     {processSteps.map((step) => (
                         <Grid
                             key={step.no}
@@ -2028,7 +2960,7 @@ export default function Home2() {
                     ))}
                 </Grid>
             </Grid>
-
+ 
             {/* 5b. TRAINING & WORKSHOPS overview ---------------------- */}
             <Grid container className="p-2 p-lg-5" spacing={3}>
                 <Grid size={{ xs: 12, md: 5 }}>
@@ -2053,14 +2985,14 @@ export default function Home2() {
                     </Typography>
                     <Button
                         component={Link}
-                        to="/training&workshops"
+                        to="/training&workshop"
                         className="btn-main text-white px-4 py-2"
                         data-aos="fade-up"
                     >
                         Explore Programs
                     </Button>
                 </Grid>
-
+ 
                 <Grid size={{ xs: 12, md: 7 }}>
                     <Grid container spacing={2}>
                         {trainingFormats.map((format) => {
@@ -2069,7 +3001,7 @@ export default function Home2() {
                                 <Grid
                                     data-aos="fade-up"
                                     key={format.id}
-                                    size={{ xs: 12, sm: 4 }}
+                                    size={{ xs: 12, sm: 6 }}
                                 >
                                     <Box className="p-3 bg-white border-10 h-100" sx={cardSx}>
                                         <Box className="p-2 border-50 bg-purple d-inline-flex">
@@ -2097,7 +3029,7 @@ export default function Home2() {
                     </Grid>
                 </Grid>
             </Grid>
-
+ 
             {/* 6. GLOBAL REACH (verified stats + markets) ------------- */}
             <Grid container className="p-2 p-md-4 my-3 bg-dark-purple">
                 <Grid size={{ xs: 12, md: 5 }} className="p-3 p-md-4">
@@ -2113,7 +3045,7 @@ export default function Home2() {
                         Helping Businesses Grow Across Borders
                     </Typography>
                     <hr className="border" data-aos="zoom-in" style={{ width: "70px" }} />
-
+ 
                     <Grid container spacing={3} className="align-items-center">
                         {reachStats.map((stat, index) => (
                             <Fragment key={stat.key}>
@@ -2144,7 +3076,7 @@ export default function Home2() {
                             </Fragment>
                         ))}
                     </Grid>
-
+ 
                     <Typography
                         className="text-white mt-4 mb-2"
                         variant="body2"
@@ -2164,7 +3096,7 @@ export default function Home2() {
                         ))}
                     </Box>
                 </Grid>
-
+ 
                 <Grid
                     size={{ xs: 12, md: 7 }}
                     className="d-flex align-items-center overflow-hidden"
@@ -2179,7 +3111,7 @@ export default function Home2() {
                     />
                 </Grid>
             </Grid>
-
+ 
             {/* 7. INDUSTRIES WE SERVE --------------------------------- */}
             <Grid container spacing={2} className="p-4 bg-light-purple">
                 <Grid
@@ -2210,7 +3142,7 @@ export default function Home2() {
                         className="w-100 flex-1"
                     />
                 </Grid>
-
+ 
                 <Grid size={{ xs: 12, md: "grow" }}>
                     <Grid container spacing={2}>
                         {industries.map((industry) => (
@@ -2237,7 +3169,7 @@ export default function Home2() {
                     </Grid>
                 </Grid>
             </Grid>
-
+ 
             {/* 8. CLIENT REVIEWS (hidden until real reviews are added) - */}
             {testimonials.length > 0 && (
                 <Box className="py-5 px-3 px-md-4">
@@ -2278,7 +3210,7 @@ export default function Home2() {
                     </Grid>
                 </Box>
             )}
-
+ 
         </Box>
     );
 }
