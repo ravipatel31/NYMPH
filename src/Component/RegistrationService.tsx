@@ -1,10 +1,17 @@
-import {
-    Currency,
-    SeminarEvent,
-    getEventDateParts,
-    getTotalAmount,
-    getUnitPrice,
-} from "../Data/EventData";
+
+
+import { SeminarEvent } from "../Data/EventData";
+
+/**
+ * Seminar registration -> backend (saves the row + emails the admin).
+ * Relative URL on purpose: on https://nymphinternational.com it becomes
+ *   https://nymphinternational.com/api/v1/manage/registration/create-registration
+ * and in local dev CRA forwards /api to the "proxy" in package.json.
+ * Set REACT_APP_REGISTRATION_URL only if the API lives on another host.
+ */
+const REGISTRATION_URL =
+    process.env.REACT_APP_REGISTRATION_URL ||
+    "/api/v1/manage/registration/create-registration";
 
 export interface RegistrationFormValues {
     fullName: string;
@@ -19,107 +26,53 @@ export interface RegistrationFormValues {
     acceptedTerms: boolean;
 }
 
-export interface RegistrationPayload {
-    registrationId: string;
-    createdAt: string;
-    /** Becomes "paid" once the Razorpay payment is verified by the backend. */
-    status: "pending_payment";
-    event: {
-        id: string;
-        title: string;
-        dates: string;
-        time: string;
-        city: string;
-        country: string;
-        venueName: string | null;
-    };
-    pricing: {
-        currency: Currency;
-        participants: number;
-        unitPrice: number;
-        totalAmount: number;
-        groupRateApplied: boolean;
-    };
-    attendee: {
-        fullName: string;
-        email: string;
-        phone: string;
-        organisation: string;
-        designation: string;
-        city: string;
-    };
-    additionalParticipants: string;
-    notes: string;
-    acceptedTerms: boolean;
+export interface RegistrationPayload extends RegistrationFormValues {
+    eventId: string;
+    /** Hidden anti-spam field. Must stay empty. */
+    website: string;
 }
 
-/**
- * In-memory store until the backend is ready. Cleared on page refresh.
- */
-const registrations: RegistrationPayload[] = [];
-
-const newId = (): string =>
-    typeof crypto !== "undefined" && "randomUUID" in crypto
-        ? crypto.randomUUID()
-        : `reg_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+export interface RegistrationResult {
+    id: number;
+    referenceCode: string;
+}
 
 export function buildRegistrationPayload(
     event: SeminarEvent,
     values: RegistrationFormValues,
 ): RegistrationPayload {
     return {
-        registrationId: newId(),
-        createdAt: new Date().toISOString(),
-        status: "pending_payment",
-        event: {
-            id: event.id,
-            title: event.title,
-            dates: getEventDateParts(event).range,
-            time: event.time,
-            city: event.city,
-            country: event.country,
-            venueName: event.venueName,
-        },
-        pricing: {
-            currency: event.currency,
-            participants: values.participants,
-            unitPrice: getUnitPrice(event, values.participants),
-            totalAmount: getTotalAmount(event, values.participants),
-            groupRateApplied: values.participants >= event.groupMinSize,
-        },
-        attendee: {
-            fullName: values.fullName.trim(),
-            email: values.email.trim(),
-            phone: values.phone.trim(),
-            organisation: values.organisation.trim(),
-            designation: values.designation.trim(),
-            city: values.city.trim(),
-        },
+        eventId: event.id,
+        fullName: values.fullName.trim(),
+        email: values.email.trim(),
+        phone: values.phone.trim(),
+        organisation: values.organisation.trim(),
+        designation: values.designation.trim(),
+        city: values.city.trim(),
+        participants: values.participants,
         additionalParticipants: values.additionalParticipants.trim(),
         notes: values.notes.trim(),
         acceptedTerms: values.acceptedTerms,
+        website: "",
     };
 }
 
-/**
- * TEMPORARY: stores the registration in a variable and logs it.
- *
- * TODO (backend + Razorpay):
- *  1. POST the payload to the backend (e.g. POST /api/registrations).
- *  2. Backend recalculates the amount, saves the registration and creates a
- *     Razorpay order (INR for Indian events; USD needs international payments
- *     enabled on the Razorpay account).
- *  3. Open Razorpay Checkout with the returned order id.
- *  4. Verify the payment signature on the backend, mark the registration
- *     "paid", then send the receipt, invitation letter and guidelines.
- * Keep this function's signature so the dialog needs no changes.
- */
-export async function submitRegistration(
-    payload: RegistrationPayload,
-): Promise<{ ok: true; registrationId: string }> {
-    registrations.push(payload);
-    console.log("[Registration] submitted:", payload);
-    return { ok: true, registrationId: payload.registrationId };
-}
+/** Throws Error(message) with the API's message when the request is rejected. */
+export async function submitRegistration(payload: RegistrationPayload): Promise<RegistrationResult> {
+    let res: Response;
+    try {
+        res = await fetch(REGISTRATION_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+    } catch {
+        throw new Error("Could not reach the server. Please check your connection and try again.");
+    }
 
-export const getStoredRegistrations = (): RegistrationPayload[] => [...registrations];
+    const json = await res.json().catch(() => null);
+    if (!res.ok || !json?.status) {
+        throw new Error(json?.message || "Something went wrong. Please try again.");
+    }
+    return json.data as RegistrationResult;
+}

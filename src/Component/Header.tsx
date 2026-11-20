@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo from '../Assets/Images/full-logo2.png'
+import logo from '../Assets/Images/nymph-logo.svg'
 
 const menuItems = [
   {
@@ -147,12 +147,12 @@ function Header() {
             </Box>
 
             <Box sx={{ display: { xs: "none", md: "block" } }}>
-              <Button
+              {/* <Button
                 variant="contained"
                 className="btn-main"
               >
                 Get Started
-              </Button>
+              </Button> */}
             </Box>
 
             <Box sx={{ ml: "auto", display: { xs: "block", md: "none" } }}>
@@ -196,12 +196,12 @@ function Header() {
             {/* <Box sx={{ p: 2 }}> */}
             {/* </Box> */}
           </List>
-          <Button
+          {/* <Button
             fullWidth
             variant="contained"
             className="btn-main">
             Get Started
-          </Button>
+          </Button> */}
         </Box>
       </Drawer>
     </>

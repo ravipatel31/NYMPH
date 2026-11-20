@@ -1,7 +1,7 @@
 import { Call, Email, Facebook, Instagram, LinkedIn, LocationCityOutlined, LocationPin, PhoneInTalk, Twitter, X } from '@mui/icons-material'
 import { Box, Button, Grid, Typography } from '@mui/material'
 import React from 'react'
-import fulllogo from '../Assets/Images/full-logo2.png'
+import fulllogo from '../Assets/Images/nymph-logo-on-dark.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 
@@ -34,11 +34,10 @@ function Footer() {
     const ctaContent = ctacontent();
     const navigate = useNavigate()
     const menuItems = [
-        "About Us",
-        "Services",
-        "Global Expansion",
-        "Training & Workshop",
-        "Contact Us",
+        { text: "About Us", url: "/about" },
+        { text: "Services", url: "/services" },
+        { text: "Workshops", url: "/training&workshop" },
+        { text: "Contact Us", url: "/contact" },
     ];
 
     const services = [
@@ -101,7 +100,7 @@ function Footer() {
                         <Typography className='fs-18 fw-medium mb-3 text-white'>Quick Links</Typography>
                         {
                             menuItems?.map((item) => (
-                                <Typography key={item} className='fs-14 mb-2 text-white'>{item}</Typography>
+                                <Typography key={item?.text} onClick={() => { navigate(`${item?.url}`) }} className='fs-14 mb-2 text-white' sx={{ cursor: 'pointer' }}>{item?.text}</Typography>
                             ))
                         }
                     </Grid>
@@ -119,9 +118,12 @@ function Footer() {
                             <LocationPin className='text-white' />
                             <Typography className='fs-14 text-white'>AF-6, Takshashila Orient, Nikol-Naroda Road, Ahmedabad, Gujarat, India - 382350.</Typography>
                         </Box>
-                        <Box className='d-flex align-items-start gap-2 mb-3'>
+                        <Box className='d-flex align-items-center gap-2 mb-3'>
                             <Call className='text-white' />
-                            <Typography className='fs-14 text-white'> <a href="tel:+919574544288" className='text-white' style={{ textDecoration: 'none !important', color: "white" }}>+91 9574544288</a></Typography>
+                            <Box>
+                                <Typography className='fs-14 text-white'> <a href="tel:+919574544288" className='text-white' style={{ textDecoration: 'none !important', color: "white" }}>+91 9574544288</a></Typography>
+                                <Typography className='fs-14 text-white'> <a href="tel:+919023623761" className='text-white' style={{ textDecoration: 'none !important', color: "white" }}>+91 9023623761</a></Typography>
+                            </Box>
                         </Box>
                         <Box className='d-flex align-items-start gap-2'>
                             <Email className='text-white' />

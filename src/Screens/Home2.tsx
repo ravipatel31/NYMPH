@@ -2318,9 +2318,9 @@ import EventCard from "../Component/EventCard";
 import {
     EVENTS_LIST_SEMINARS_PATH,
     getEventDateParts,
-    getUpcomingEvents,
     joinList,
 } from "../Data/EventData";
+import { useUpcomingEvents } from "../Data/EventContext";
 import map from "../Assets/Images/map.png";
 import whoweare from "../Assets/Images/WhoWeAre.png";
 import iws from "../Assets/Images/industriesweserve.png";
@@ -2520,7 +2520,11 @@ const cardSx = {
  
 export default function Home2() {
     // Seminars that haven't finished yet, soonest first. Past ones drop off automatically.
-    const upcomingEvents = getUpcomingEvents();
+    const {
+        events: upcomingEvents,
+        loading: eventsLoading,
+        error: eventsError,
+    } = useUpcomingEvents();
     const nextEvent = upcomingEvents[0];
     const eventCountries = Array.from(new Set(upcomingEvents.map((e:any) => e.country)));
  
@@ -2688,7 +2692,11 @@ export default function Home2() {
                         </Box>
                     ) : (
                         <Typography className="text-white">
-                            New seminar dates will be announced soon.
+                            {eventsLoading
+                                ? "Loading seminars…"
+                                : eventsError
+                                  ? "Seminars could not be loaded right now. Please try again shortly."
+                                  : "New seminar dates will be announced soon."}
                         </Typography>
                     )}
                 </Grid>
@@ -3171,7 +3179,7 @@ export default function Home2() {
             </Grid>
  
             {/* 8. CLIENT REVIEWS (hidden until real reviews are added) - */}
-            {testimonials.length > 0 && (
+            {/* {testimonials.length > 0 && (
                 <Box className="py-5 px-3 px-md-4">
                     <Typography
                         className="fs-20 text-main fw-medium text-center"
@@ -3209,7 +3217,7 @@ export default function Home2() {
                         ))}
                     </Grid>
                 </Box>
-            )}
+            )} */}
  
         </Box>
     );

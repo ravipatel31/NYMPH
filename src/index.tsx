@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import "aos/dist/aos.css";
+import { EventsProvider } from './Data/EventContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <BrowserRouter>
+      <EventsProvider>
+        <App />
+      </EventsProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

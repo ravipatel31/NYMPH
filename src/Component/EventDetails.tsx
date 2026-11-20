@@ -10,10 +10,11 @@ import {
     ScheduleOutlined,
     ShareOutlined,
 } from "@mui/icons-material";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import RegistrationDialog from "./RegistrationDialog";
+import { useEventById } from "../Data/EventContext";
 import {
     CONTACT_PHONE,
     CONTACT_PHONE_HREF,
@@ -22,17 +23,17 @@ import {
     afterPayment,
     feeInclusions,
     formatMoney,
-    getEventById,
     getEventDateParts,
     isEventPast,
 } from "../Data/EventData";
+import EventAudienceBenefits from "./EventAudienceBenefit";
 
 // MUI Typography can override inherited colour, so force white on purple.
 const whiteSx = { color: "#fff !important" };
 
 function EventDetails() {
     const { eventId } = useParams<{ eventId: string }>();
-    const event = getEventById(eventId);
+    const { event, loading, error, reload } = useEventById(eventId);
 
     const [registerOpen, setRegisterOpen] = useState(false);
     const [shareMessage, setShareMessage] = useState("");
@@ -50,6 +51,36 @@ function EventDetails() {
             document.title = previous;
         };
     }, [event]);
+
+    /* ---------- Loading / API error ---------- */
+    if (loading) {
+        return (
+            <Box className="text-center px-3 py-5 my-5" role="status" aria-live="polite">
+                <CircularProgress />
+                <Typography className="text-grey mt-3">Loading seminar details…</Typography>
+            </Box>
+        );
+    }
+
+    if (error && !event) {
+        return (
+            <Box className="text-center px-3 py-5 my-5">
+                <Typography component="h1" className="fw-bold c-f fs-32 mb-2">
+                    We couldn&apos;t load this seminar
+                </Typography>
+                <Typography className="text-grey mb-4">
+                    Please check your connection and try again. If the problem continues, call us on{" "}
+                    <a href={CONTACT_PHONE_HREF} className="text-main">
+                        {CONTACT_PHONE}
+                    </a>
+                    .
+                </Typography>
+                <Button onClick={reload} className="btn-main text-white px-4 py-2">
+                    Try again
+                </Button>
+            </Box>
+        );
+    }
 
     /* ---------- Unknown event id ---------- */
     if (!event) {
@@ -260,6 +291,8 @@ function EventDetails() {
                             </Box>
                         </Grid>
                     </Grid>
+
+                    <EventAudienceBenefits />
                 </Grid>
 
                 {/* Right: pricing & actions */}

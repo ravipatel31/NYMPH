@@ -1073,6 +1073,8 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import whoweare from "../Assets/Images/WhoWeAre.png";
 import { FOUNDED_YEAR } from "../Data/CompanyData";
+import ShreyRaval from '../Assets/Images/Shrey-Raval.png'
+import SureshRaval from '../Assets/Images/Suresh-Raval.png'
 
 /* ------------------------------------------------------------------ */
 /* Content                                                             */
@@ -1087,7 +1089,7 @@ const founders = [
         name: "Suresh Raval",
         role: "CEO, NYMPH International LLP",
         secondaryRole: "",
-        image: null,
+        image: SureshRaval,
         bio: [
             "International business consultant, entrepreneur, academician and researcher in business management, with more than two decades of experience across manufacturing, services, education, hospitality management and healthcare.",
             "A qualified auditor for ISO 9001:2015 (Quality Management Systems) and ISO 45001:2018 (Occupational Health and Safety Management Systems), he is also a visiting guest lecturer at colleges, universities, industry groups and MSME (Ministry of Micro, Small & Medium Enterprises, Government of India).",
@@ -1103,7 +1105,7 @@ const founders = [
         name: "Shrey Raval",
         role: "Managing Director, NYMPH International LLP",
         secondaryRole: "",
-        image: null,
+        image: ShreyRaval,
         bio: [
             "Entrepreneur and strategic researcher with over five years of cross-industry experience across manufacturing, services, education and hospitality management. He applies advanced management methodologies to drive organizational growth and operational performance.",
             "A top 1% academic scholar specializing in Management Accounting, his research has been recognized internationally, earning an Award for Outstanding Performance at a premier conference in the United States. He bridges theoretical management frameworks with practical execution to build scalable, resilient business models.",
@@ -1447,14 +1449,16 @@ function AboutUs2() {
                                     <Box
                                         className="d-flex align-items-center justify-content-center bg-light-purple"
                                         sx={{
-                                            height: "110px",
-                                            width: "110px",
+                                            height: "100px",
+                                            width: "100px",
                                             flexShrink: 0,
                                             borderRadius: "12px",
                                             overflow: "hidden",
+                                            background: `url(${founder?.image}) no-repeat center 10%`,
+                                            backgroundSize:'cover'
                                         }}
                                     >
-                                        {founder.image ? (
+                                        {/* {founder.image ? (
                                             <Box
                                                 component="img"
                                                 src={founder.image}
@@ -1469,7 +1473,7 @@ function AboutUs2() {
                                             <Typography className="fw-medium fs-32 text-main">
                                                 {initials(founder.name)}
                                             </Typography>
-                                        )}
+                                        )} */}
                                     </Box>
                                     <Box>
                                         <Typography

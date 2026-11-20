@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 675 620" width="675" height="620" role="img" aria-label="NYMPH International LLP icon">
+<title>NYMPH International LLP icon</title>
+<g>
+  <defs>
+    <linearGradient id="goldc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E3BC7A"/><stop offset="0.5" stop-color="#C28B39"/><stop offset="1" stop-color="#8E5F1E"/>
+    </linearGradient>
+    <linearGradient id="goldHc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8E5F1E"/><stop offset="0.45" stop-color="#E3BC7A"/><stop offset="1" stop-color="#C28B39"/>
+    </linearGradient>
+    <radialGradient id="ballc" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#F6E2B8"/><stop offset="0.35" stop-color="#C28B39"/><stop offset="1" stop-color="#8E5F1E"/>
+    </radialGradient>
+    <linearGradient id="nc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8C3C97"/><stop offset="1" stop-color="#4B0F55"/>
+    </linearGradient>
+  </defs>
+  <!-- globe -->
+  <circle cx="318" cy="305" r="240" fill="none" stroke="url(#goldc)" stroke-width="11"/>
+  <g fill="none" stroke="url(#goldc)" stroke-width="3.2" opacity="0.8">
+    <ellipse cx="318" cy="305" rx="86.4" ry="240" /><ellipse cx="318" cy="305" rx="163.2" ry="240" /><line x1="318" y1="65" x2="318" y2="545" /><path d="M 113.0 180.2 Q 318 166.2 523.0 180.2" /><path d="M 83.9 252.2 Q 318 238.2 552.1 252.2" /><path d="M 89.1 377.0 Q 318 391.0 546.9 377.0" /><path d="M 126.0 449.0 Q 318 463.0 510.0 449.0" />
+  </g>
+  <!-- orbit, back part -->
+  <g transform="translate(314 327) rotate(-31)"><path d="M -300 0 A 300 110 0 0 1 300 0 A 300 103 0 0 0 -300 0 Z" fill="url(#goldHc)" opacity="0.9"/></g>
+  <!-- N -->
+  <path d="M172.86 111.19999999999999 456.26 413.84000000000003V155.92000000000002Q455.74 142.39999999999998 446.64 133.29999999999998Q437.53999999999996 124.19999999999999 424.02 124.19999999999999H414.14V119.0H521.26V124.19999999999999H511.9Q498.9 124.19999999999999 489.54 133.29999999999998Q480.18000000000006 142.39999999999998 479.65999999999997 155.92000000000002V423.72Q479.65999999999997 440.36 480.7 455.70000000000005Q481.74 471.04 483.30000000000007 480.4L484.34000000000003 490.28H479.65999999999997L195.74 187.64L196.26 446.08Q196.26 459.08 205.62 468.44Q214.98000000000002 477.8 227.98000000000002 477.8H237.86V483.0H130.74V477.8H140.62Q153.62 477.8 162.98000000000002 468.44Q172.34 459.08 172.34 446.08V176.2Q172.34 149.68 170.26 130.44L167.66 111.19999999999999Z" fill="url(#nc)" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke"/>
+  <!-- orbit, front swoosh -->
+  <g transform="translate(314 327) rotate(-31)"><path d="M -300 0 A 300 112 0 0 0 300 0 A 300 74 0 0 1 -300 0 Z" fill="url(#goldHc)"/></g>
+  <!-- sphere -->
+  <circle cx="593.2" cy="164.5" r="27" fill="url(#ballc)"/>
+</g>
+</svg>

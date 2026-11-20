@@ -75,6 +75,7 @@ function validate(values: RegistrationFormValues): Errors {
         errors.phone = "Please enter a valid phone number, including country code.";
     if (values.organisation.trim().length < 2)
         errors.organisation = "Please enter your organisation or business name.";
+    if (values.city.trim().length < 2) errors.city = "Please enter your city.";
     if (values.participants < 1 || values.participants > MAX_PARTICIPANTS)
         errors.participants = `Choose between 1 and ${MAX_PARTICIPANTS} participants.`;
     if (!values.acceptedTerms) errors.acceptedTerms = "Please accept the terms to continue.";
@@ -96,6 +97,7 @@ export default function RegistrationDialog({ event, open, onClose }: Registratio
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState("");
     const [doneName, setDoneName] = useState<string | null>(null);
+    const [referenceCode, setReferenceCode] = useState("");
 
     // Fresh form every time the dialog opens (or switches to another event).
     useEffect(() => {
@@ -105,6 +107,7 @@ export default function RegistrationDialog({ event, open, onClose }: Registratio
             setSubmitError("");
             setSubmitting(false);
             setDoneName(null);
+            setReferenceCode("");
         }
     }, [open, event?.id]);
 
@@ -117,12 +120,12 @@ export default function RegistrationDialog({ event, open, onClose }: Registratio
 
     const setField =
         <K extends keyof RegistrationFormValues>(key: K) =>
-        (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-            const raw = e.target.value;
-            const next = (key === "participants" ? Number(raw) : raw) as RegistrationFormValues[K];
-            setValues((prev) => ({ ...prev, [key]: next }));
-            if (errors[key]) setErrors((prev) => ({ ...prev, [key]: undefined }));
-        };
+            (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+                const raw = e.target.value;
+                const next = (key === "participants" ? Number(raw) : raw) as RegistrationFormValues[K];
+                setValues((prev) => ({ ...prev, [key]: next }));
+                if (errors[key]) setErrors((prev) => ({ ...prev, [key]: undefined }));
+            };
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
@@ -133,11 +136,12 @@ export default function RegistrationDialog({ event, open, onClose }: Registratio
         setSubmitting(true);
         setSubmitError("");
         try {
-            await submitRegistration(buildRegistrationPayload(event, values));
+            const result = await submitRegistration(buildRegistrationPayload(event, values));
+            setReferenceCode(result.referenceCode);
             setDoneName(values.fullName.trim());
         } catch (err) {
             console.error("[Registration] failed", err);
-            setSubmitError("Something went wrong. Please try again.");
+            setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
         } finally {
             setSubmitting(false);
         }
@@ -190,6 +194,11 @@ export default function RegistrationDialog({ event, open, onClose }: Registratio
                             Your registration details for {event.city} on {date.range} have been
                             captured. Online payment will be available shortly.
                         </Typography>
+                        {referenceCode && (
+                            <Typography className="fw-medium c-f mt-2">
+                                Your reference: {referenceCode}
+                            </Typography>
+                        )}
                         <Button onClick={onClose} className="btn-main text-white px-4 py-2 mt-3">
                             Close
                         </Button>
@@ -236,6 +245,13 @@ export default function RegistrationDialog({ event, open, onClose }: Registratio
                                     error={!!errors.phone}
                                     helperText={errors.phone || "Include country code"}
                                     autoComplete="tel"
+                                    slotProps={{
+                                        htmlInput: {
+                                            maxLength: 10,
+                                            inputMode: "numeric",
+                                            pattern: "[0-9]*",
+                                        },
+                                    }}
                                     required
                                     fullWidth
                                 />
@@ -266,6 +282,9 @@ export default function RegistrationDialog({ event, open, onClose }: Registratio
                                     label="Your city"
                                     value={values.city}
                                     onChange={setField("city")}
+                                    error={!!errors.city}
+                                    helperText={errors.city}
+                                    required
                                     autoComplete="address-level2"
                                     fullWidth
                                 />
