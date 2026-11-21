@@ -1111,7 +1111,7 @@ const founders = [
             "A top 1% academic scholar specializing in Management Accounting, his research has been recognized internationally, earning an Award for Outstanding Performance at a premier conference in the United States. He bridges theoretical management frameworks with practical execution to build scalable, resilient business models.",
         ],
         highlights: [
-            "M.Com (Advanced Accounting & Auditing)",
+            // "M.Com (Advanced Accounting & Auditing)",
             "5+ years of experience",
             "Top 1% academic scholar",
             "Outstanding Performance Award, US conference",
@@ -1432,10 +1432,10 @@ function AboutUs2() {
                 <SectionHeading eyebrow="OUR FOUNDERS">
                     The People Behind NYMPH
                 </SectionHeading>
-                <Typography className="fs-16 mb-4" data-aos="fade-up">
+                {/* <Typography className="fs-16 mb-4" data-aos="fade-up">
                     NYMPH International LLP was founded by Suresh Raval (MBA, Finance) and
                     Shrey Raval (M.Com, Advanced Accounting & Auditing).
-                </Typography>
+                </Typography> */}
 
                 <Grid container spacing={3}>
                     {founders.map((founder) => (

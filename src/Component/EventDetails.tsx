@@ -109,8 +109,8 @@ function EventDetails() {
     const location = `${event.city}${event.country !== event.city ? `, ${event.country}` : ""}`;
     const mapsUrl = event.venueAddress
         ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-              `${event.venueName ?? ""} ${event.venueAddress}`,
-          )}`
+            `${event.venueName ?? ""} ${event.venueAddress}`,
+        )}`
         : "";
 
     const handleShare = async () => {
@@ -263,7 +263,8 @@ function EventDetails() {
                         </Box>
                     </Box>
 
-                    <Grid container spacing={3} className="mb-3">
+                    <EventAudienceBenefits />
+                    <Grid container spacing={3} className="mt-4">
                         <Grid size={{ xs: 12, sm: 6 }}>
                             <Typography component="h3" className="fw-bold c-f fs-20 mb-2">
                                 Seminar Fees Include
@@ -292,7 +293,7 @@ function EventDetails() {
                         </Grid>
                     </Grid>
 
-                    <EventAudienceBenefits />
+
                 </Grid>
 
                 {/* Right: pricing & actions */}

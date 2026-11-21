@@ -297,11 +297,7 @@ export const afterPayment = [
  * section appears on the Training & Workshops page automatically.
  */
 export const whoMayAttendIntro =
-    "This strategic leadership conference is a high-level leadership seminar that focuses on " +
-    "development of sustainable competitive strategies, motivational strategies, business ethics, " +
-    "horizontal and vertical integration strategies, multicultural implications on business growth, " +
-    "and development of individual leadership styles based on key leadership theories and practices. " +
-    "You may attend this conference if you are:";
+    "This Strategic Leadership Conference is an advanced professional seminar designed to explore key aspects of effective leadership and business development. It covers a wide range of topics, including the formulation of sustainable competitive strategies, employee motivation, ethical business practices, horizontal and vertical integration, the influence of multicultural environments on business growth, and the development of individual leadership approaches through established leadership theories and practical applications.";
 
 export const whoShouldAttend: string[] = [
     "An entrepreneur.",

@@ -101,7 +101,7 @@ function Header() {
         elevation={0}
       >
         <Container maxWidth='xl'>
-          <Toolbar disableGutters sx={{ height: 70 }}>
+          <Toolbar disableGutters sx={{ height: 80 }}>
             <Box className='p-1 h-100'>
             <Box component={'img'} src={logo} height={'100%'} onClick={() => {
                       navigate(`/`);

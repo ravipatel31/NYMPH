@@ -14,7 +14,7 @@ export default function EventAudienceBenefits() {
                         Who May Attend
                     </Typography>
                     {whoMayAttendIntro && (
-                        <Typography className="fs-16 text-grey mb-2">{whoMayAttendIntro}</Typography>
+                        <Typography className="fs-16 mb-2">{whoMayAttendIntro}</Typography>
                     )}
                     <Box className="d-flex flex-column gap-2">
                         {whoShouldAttend.map((item) => (

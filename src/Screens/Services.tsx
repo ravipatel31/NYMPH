@@ -272,6 +272,7 @@ import {
 } from "@mui/icons-material";
 import { Box, Grid, Typography } from "@mui/material";
 import { MARKETS, SECTORS } from "../Data/CompanyData";
+import GlobalExpansionSection from "../Component/GlobalExpansion";
 
 /* ------------------------------------------------------------------ */
 /* Content (wording from the client's content document)                */
@@ -511,7 +512,7 @@ function Services() {
             </Grid>
 
             {/* 3. GLOBAL EXPANSION + MARKETS -------------------------- */}
-            <Grid container spacing={3} className="p-4 p-md-5 my-4 bg-dark-purple">
+            {/* <Grid container spacing={3} className="p-4 p-md-5 my-4 bg-dark-purple">
                 <Grid size={{ xs: 12, md: 5 }}>
                     <Typography
                         className="fs-16 text-second fw-bold"
@@ -563,7 +564,8 @@ function Services() {
                         ))}
                     </Grid>
                 </Grid>
-            </Grid>
+            </Grid> */}
+            <GlobalExpansionSection/>
 
             {/* 4. CORPORATE TRAINING ---------------------------------- */}
             <Box className="mx-2 mx-md-4 my-5">
